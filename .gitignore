@@ -1,0 +1,18 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+pnpm-lock.yaml
+.yarn
+
+# editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*storybook.log
