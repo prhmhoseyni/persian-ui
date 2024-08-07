@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 const tailwindConfig = {
     content: [
         "./src/**/*.{html,js}"

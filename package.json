@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx tailwindcss -i ./src/main.css -o ./src/main.output.css --watch"
+    "dev": "postcss ./src/main.css -o ./src/output.css --watch",
+    "build": "node build.js --base && node build.js --components && node build.js --utilities"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,9 @@
   "homepage": "https://github.com/prhmhoseyni/DIG#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.19",
+    "fs-extra": "^11.2.0",
     "postcss": "^8.4.40",
+    "postcss-cli": "^11.0.0",
     "tailwindcss": "^3.4.7"
   }
 }

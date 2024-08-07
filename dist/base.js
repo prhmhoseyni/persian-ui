@@ -1,1 +1,1 @@
-module.exports = {};
+module.exports = {"*":{"boxSizing":"border-box"},"html":{"scrollBehavior":"smooth"}};

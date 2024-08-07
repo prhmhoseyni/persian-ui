@@ -74,17 +74,17 @@ export default {
         /**
          * :::: error colors (error) ::::
          */
-        "critical-50": "#FEF6F6",
-        "critical-100": "#FEE8E6",
-        "critical-200": "#FFCFCC",
-        "critical-300": "#FDB0AA",
-        "critical-400": "#F97F76",
-        "critical-500": "#F0493D",
-        "critical-600": "#DF362A",
-        "critical-700": "#C1251A",
-        "critical-800": "#9D231B",
-        "critical-900": "#86241D",
-        "critical-950": "#480E09",
+        "danger-50": "#FEF6F6",
+        "danger-100": "#FEE8E6",
+        "danger-200": "#FFCFCC",
+        "danger-300": "#FDB0AA",
+        "danger-400": "#F97F76",
+        "danger-500": "#F0493D",
+        "danger-600": "#DF362A",
+        "danger-700": "#C1251A",
+        "danger-800": "#9D231B",
+        "danger-900": "#86241D",
+        "danger-950": "#480E09",
 
         /**
          * :::: gray colors (gray) ::::
@@ -202,19 +202,19 @@ export default {
         "warning-950": "#ffeacc",
 
         /**
-         * :::: critical colors (critical) ::::
+         * :::: danger colors (danger) ::::
          */
-        "critical-50": "#38282b",
-        "critical-100": "#4d2d2d",
-        "critical-200": "#763331",
-        "critical-300": "#9e3b35",
-        "critical-400": "#c74139",
-        "critical-500": "#f0493d",
-        "critical-600": "#f2645a",
-        "critical-700": "#f4776e",
-        "critical-800": "#f79b94",
-        "critical-900": "#fabfbb",
-        "critical-950": "#fcdbd8",
+        "danger-50": "#38282b",
+        "danger-100": "#4d2d2d",
+        "danger-200": "#763331",
+        "danger-300": "#9e3b35",
+        "danger-400": "#c74139",
+        "danger-500": "#f0493d",
+        "danger-600": "#f2645a",
+        "danger-700": "#f4776e",
+        "danger-800": "#f79b94",
+        "danger-900": "#fabfbb",
+        "danger-950": "#fcdbd8",
 
         /**
          * :::: gray colors (gray) ::::

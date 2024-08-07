@@ -1,8 +1,6 @@
 export default {
     "bg-primary": "bg-primary",
     "bg-secondary": "bg-secondary",
-    "bg-tertiary": "bg-tertiary",
-    "bg-alert": "bg-alert",
     "bg-menu": "bg-menu",
     "bg-dialog": "bg-dialog",
 
@@ -15,17 +13,37 @@ export default {
     "white": "base-white",
 
     "brand": "brand-500",
+    "brand--hover": "brand-600",
+    "brand--active": "brand-700",
     "brand-light": "brand-50",
+    "brand-light--hover": "brand-100",
+    "brand-light--active": "brand-200",
 
     "info": "info-500",
+    "info--hover": "info-600",
+    "info--active": "info-700",
     "info-light": "info-50",
+    "info-light--hover": "info-100",
+    "info-light--active": "info-200",
 
     "success": "success-500",
+    "success--hover": "success-600",
+    "success--active": "success-700",
     "success-light": "success-50",
+    "success-light--hover": "success-100",
+    "success-light--active": "success-200",
 
     "warning": "warning-500",
+    "warning--hover": "warning-600",
+    "warning--active": "warning-700",
     "warning-light": "warning-50",
+    "warning-light--hover": "warning-100",
+    "warning-light--active": "warning-200",
 
-    "critical": "critical-500",
-    "critical-light": "critical-50",
+    "danger": "danger-500",
+    "danger--hover": "danger-600",
+    "danger--active": "danger-700",
+    "danger-light": "danger-50",
+    "danger-light--hover": "danger-100",
+    "danger-light--active": "danger-200",
 }

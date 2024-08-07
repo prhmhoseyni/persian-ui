@@ -5,6 +5,9 @@
 pnpm-lock.yaml
 .yarn
 
+# production
+/build
+
 # editor directories and files
 .vscode/*
 !.vscode/extensions.json

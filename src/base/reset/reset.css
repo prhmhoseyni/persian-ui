@@ -1,0 +1,8 @@
+* {
+    @apply box-border;
+}
+
+html {
+    @apply scroll-smooth;
+}
+
