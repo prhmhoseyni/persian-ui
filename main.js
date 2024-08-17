@@ -20,7 +20,7 @@ function DotinInterfaceGuide({config, addBase, addComponents, addUtilities}) {
         DarkTheme[`--${key}`] = PrimitiveColors.dark[value];
     }
 
-    console.log(">>>>", LightTheme, DarkTheme);
+    // console.log(">>>>", LightTheme, DarkTheme);
 
     /**
      * @example box-sizing, font-family and ...

@@ -47,8 +47,6 @@ function concatenateFiles(directory, output) {
         const content = fs.readFileSync(file, "utf8");
         fs.appendFileSync(output, content + "\n");
     });
-
-    // console.log(`All CSS files have been concatenated into ${output}`);
 }
 
 

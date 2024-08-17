@@ -1,0 +1,1286 @@
+/*
+! tailwindcss v3.4.7 | MIT License | https://tailwindcss.com
+*//*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+
+html,
+:host {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4; /* 3 */
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-feature-settings: normal; /* 2 */
+  font-variation-settings: normal; /* 3 */
+  font-size: 1em; /* 4 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  letter-spacing: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden] {
+  display: none;
+}
+
+:root {
+  color-scheme: light;
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F7FA;
+  --bg-menu: #FFFFFF;
+  --bg-dialog: #000000;
+  --primary: #1E1E1E;
+  --secondary: #6D6D6D;
+  --hint: #888888;
+  --disabled: #888888;
+  --inverse: #F6F6F6;
+  --link: #0C8CE9;
+  --white: #FFFFFF;
+  --brand: #0369CD;
+  --brand--hover: #0255A6;
+  --brand--active: #02417E;
+  --brand-light: #F0F7FF;
+  --brand-light--hover: #E0EFFF;
+  --brand-light--active: #C2DFFF;
+  --info: #209CD7;
+  --info--hover: #127DB7;
+  --info--active: #106494;
+  --info-light: #F1F9FE;
+  --info-light--hover: #E2F2FC;
+  --info-light--active: #BFE3F8;
+  --success: #34CB5A;
+  --success--hover: #239A41;
+  --success--active: #1F7A37;
+  --success-light: #F7FDF8;
+  --success-light--hover: #E5FAEA;
+  --success-light--active: #C4F3CF;
+  --warning: #FF9500;
+  --warning--hover: #EB7100;
+  --warning--active: #C54D02;
+  --warning-light: #FFFDF5;
+  --warning-light--hover: #FFF4D1;
+  --warning-light--active: #FFE78F;
+  --danger: #F0493D;
+  --danger--hover: #DF362A;
+  --danger--active: #C1251A;
+  --danger-light: #FEF6F6;
+  --danger-light--hover: #FEE8E6;
+  --danger-light--active: #FFCFCC;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Vazirmatn", sans-serif !important;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 1px;
+}
+.btn:not(.btn-xs, .btn-sm, .btn-lg, .btn-xl) {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 18px;
+  min-height: 2.5rem;
+  border-radius: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.btn.btn-xs {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 16px;
+  min-height: 2rem;
+  border-radius: 0.5rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+.btn.btn-sm {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 18px;
+  min-height: 2.25rem;
+  border-radius: 0.5rem;
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+}
+.btn.btn-lg {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 18px;
+  min-height: 2.75rem;
+  border-radius: 0.5rem;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+.btn.btn-xl {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 20px;
+  min-height: 3rem;
+  border-radius: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.btn.btn-rounded-full {
+  border-radius: 9999px;
+}
+.btn-brand {
+  border-color: var(--brand);
+  background-color: var(--brand);
+  color: var(--inverse);
+}
+.btn-brand:hover {
+  border-color: var(--brand--hover);
+  background-color: var(--brand--hover);
+  color: var(--inverse);
+}
+.btn-brand:active {
+  border-color: var(--brand--active);
+  background-color: var(--brand--active);
+  color: var(--inverse);
+}
+.btn-brand.btn-tinted {
+  border-color: var(--brand-light);
+  background-color: var(--brand-light);
+  color: var(--brand);
+}
+.btn-brand.btn-tinted:hover {
+  border-color: var(--brand-light--hover);
+  background-color: var(--brand-light--hover);
+  color: var(--brand--hover);
+}
+.btn-brand.btn-tinted:active {
+  border-color: var(--brand-light--active);
+  background-color: var(--brand-light--active);
+  color: var(--brand--active);
+}
+.btn-brand.btn-outlined {
+  border-color: var(--brand);
+  background-color: transparent;
+  color: var(--brand);
+}
+.btn-brand.btn-outlined:hover {
+  border-color: var(--brand--hover);
+  background-color: var(--brand-light--hover);
+  color: var(--brand--hover);
+}
+.btn-brand.btn-outlined:active {
+  border-color: var(--brand--active);
+  background-color: var(--brand-light--active);
+  color: var(--brand--active);
+}
+.btn-brand.btn-text {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--brand);
+}
+.btn-brand.btn-text:hover {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--brand--hover);
+}
+.btn-brand.btn-text:active {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--brand--active);
+}
+.btn-info {
+  border-color: var(--info);
+  background-color: var(--info);
+  color: var(--inverse);
+}
+.btn-info:hover {
+  border-color: var(--info--hover);
+  background-color: var(--info--hover);
+  color: var(--inverse);
+}
+.btn-info:active {
+  border-color: var(--info--active);
+  background-color: var(--info--active);
+  color: var(--inverse);
+}
+.btn-info.btn-tinted {
+  border-color: var(--info-light);
+  background-color: var(--info-light);
+  color: var(--info);
+}
+.btn-info.btn-tinted:hover {
+  border-color: var(--info-light--hover);
+  background-color: var(--info-light--hover);
+  color: var(--info--hover);
+}
+.btn-info.btn-tinted:active {
+  border-color: var(--info-light--active);
+  background-color: var(--info-light--active);
+  color: var(--info--active);
+}
+.btn-info.btn-outlined {
+  border-color: var(--info);
+  background-color: transparent;
+  color: var(--info);
+}
+.btn-info.btn-outlined:hover {
+  border-color: var(--info--hover);
+  background-color: var(--info-light--hover);
+  color: var(--info--hover);
+}
+.btn-info.btn-outlined:active {
+  border-color: var(--info--active);
+  background-color: var(--info-light--active);
+  color: var(--info--active);
+}
+.btn-info.btn-text {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--info);
+}
+.btn-info.btn-text:hover {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--info--hover);
+}
+.btn-info.btn-text:active {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--info--active);
+}
+.btn-success {
+  border-color: var(--success);
+  background-color: var(--success);
+  color: var(--inverse);
+}
+.btn-success:hover {
+  border-color: var(--success--hover);
+  background-color: var(--success--hover);
+  color: var(--inverse);
+}
+.btn-success:active {
+  border-color: var(--success--active);
+  background-color: var(--success--active);
+  color: var(--inverse);
+}
+.btn-success.btn-tinted {
+  border-color: var(--success-light);
+  background-color: var(--success-light);
+  color: var(--success);
+}
+.btn-success.btn-tinted:hover {
+  border-color: var(--success-light--hover);
+  background-color: var(--success-light--hover);
+  color: var(--success--hover);
+}
+.btn-success.btn-tinted:active {
+  border-color: var(--success-light--active);
+  background-color: var(--success-light--active);
+  color: var(--success--active);
+}
+.btn-success.btn-outlined {
+  border-color: var(--success);
+  background-color: transparent;
+  color: var(--success);
+}
+.btn-success.btn-outlined:hover {
+  border-color: var(--success--hover);
+  background-color: var(--success-light--hover);
+  color: var(--success--hover);
+}
+.btn-success.btn-outlined:active {
+  border-color: var(--success--active);
+  background-color: var(--success-light--active);
+  color: var(--success--active);
+}
+.btn-success.btn-text {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--success);
+}
+.btn-success.btn-text:hover {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--success--hover);
+}
+.btn-success.btn-text:active {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--success--active);
+}
+.btn-warning {
+  border-color: var(--warning);
+  background-color: var(--warning);
+  color: var(--inverse);
+}
+.btn-warning:hover {
+  border-color: var(--warning--hover);
+  background-color: var(--warning--hover);
+  color: var(--inverse);
+}
+.btn-warning:active {
+  border-color: var(--warning--active);
+  background-color: var(--warning--active);
+  color: var(--inverse);
+}
+.btn-warning.btn-tinted {
+  border-color: var(--warning-light);
+  background-color: var(--warning-light);
+  color: var(--warning);
+}
+.btn-warning.btn-tinted:hover {
+  border-color: var(--warning-light--hover);
+  background-color: var(--warning-light--hover);
+  color: var(--warning--hover);
+}
+.btn-warning.btn-tinted:active {
+  border-color: var(--warning-light--active);
+  background-color: var(--warning-light--active);
+  color: var(--warning--active);
+}
+.btn-warning.btn-outlined {
+  border-color: var(--warning);
+  background-color: transparent;
+  color: var(--warning);
+}
+.btn-warning.btn-outlined:hover {
+  border-color: var(--warning--hover);
+  background-color: var(--warning-light--hover);
+  color: var(--warning--hover);
+}
+.btn-warning.btn-outlined:active {
+  border-color: var(--warning--active);
+  background-color: var(--warning-light--active);
+  color: var(--warning--active);
+}
+.btn-warning.btn-text {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--warning);
+}
+.btn-warning.btn-text:hover {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--warning--hover);
+}
+.btn-warning.btn-text:active {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--warning--active);
+}
+.btn-danger {
+  border-color: var(--danger);
+  background-color: var(--danger);
+  color: var(--inverse);
+}
+.btn-danger:hover {
+  border-color: var(--danger--hover);
+  background-color: var(--danger--hover);
+  color: var(--inverse);
+}
+.btn-danger:active {
+  border-color: var(--danger--active);
+  background-color: var(--danger--active);
+  color: var(--inverse);
+}
+.btn-danger.btn-tinted {
+  border-color: var(--danger-light);
+  background-color: var(--danger-light);
+  color: var(--danger);
+}
+.btn-danger.btn-tinted:hover {
+  border-color: var(--danger-light--hover);
+  background-color: var(--danger-light--hover);
+  color: var(--danger--hover);
+}
+.btn-danger.btn-tinted:active {
+  border-color: var(--danger-light--active);
+  background-color: var(--danger-light--active);
+  color: var(--danger--active);
+}
+.btn-danger.btn-outlined {
+  border-color: var(--danger);
+  background-color: transparent;
+  color: var(--danger);
+}
+.btn-danger.btn-outlined:hover {
+  border-color: var(--danger--hover);
+  background-color: var(--danger-light--hover);
+  color: var(--danger--hover);
+}
+.btn-danger.btn-outlined:active {
+  border-color: var(--danger--active);
+  background-color: var(--danger-light--active);
+  color: var(--danger--active);
+}
+.btn-danger.btn-text {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--danger);
+}
+.btn-danger.btn-text:hover {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--danger--hover);
+}
+.btn-danger.btn-text:active {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--danger--active);
+}
+.btn:disabled {
+  cursor: not-allowed;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  color: var(--disabled);
+}
+.btn:disabled:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  color: var(--disabled);
+}
+.btn:disabled:active {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  color: var(--disabled);
+}
+.btn-tinted:disabled {
+  --tw-border-opacity: 1;
+  border-color: rgb(243 244 246 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  color: var(--disabled);
+}
+.btn-tinted:disabled:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(243 244 246 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  color: var(--disabled);
+}
+.btn-tinted:disabled:active {
+  --tw-border-opacity: 1;
+  border-color: rgb(243 244 246 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  color: var(--disabled);
+}
+.btn-outlined:disabled {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  background-color: transparent;
+  color: var(--disabled);
+}
+.btn-outlined:disabled:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  background-color: transparent;
+  color: var(--disabled);
+}
+.btn-outlined:disabled:active {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  background-color: transparent;
+  color: var(--disabled);
+}
+.btn-text:disabled {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--disabled);
+}
+.btn-text:disabled:hover {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--disabled);
+}
+.btn-text:disabled:active {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--disabled);
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 1px;
+}
+.chip:not(.chip-xs, .chip-sm, .chip-lg) {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 16px;
+  min-height: 1.75rem;
+  border-radius: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.chip.chip-xs {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 16px;
+  min-height: 1.25rem;
+  border-radius: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.chip.chip-sm {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 16px;
+  min-height: 1.5rem;
+  border-radius: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.chip.chip-lg {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 18px;
+  min-height: 2rem;
+  border-radius: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.chip.chip-rounded-full {
+  border-radius: 9999px;
+}
+.chip-brand {
+  border-color: var(--brand);
+  background-color: var(--brand);
+  color: var(--inverse);
+}
+.chip-brand.chip-tinted {
+  border-color: var(--brand-light);
+  background-color: var(--brand-light);
+  color: var(--brand);
+}
+.chip-brand.chip-outlined {
+  border-color: var(--brand);
+  background-color: transparent;
+  color: var(--brand);
+}
+.chip-brand.chip-text {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--brand);
+}
+.chip-info {
+  border-color: var(--info);
+  background-color: var(--info);
+  color: var(--inverse);
+}
+.chip-info.chip-tinted {
+  border-color: var(--info-light);
+  background-color: var(--info-light);
+  color: var(--info);
+}
+.chip-info.chip-outlined {
+  border-color: var(--info);
+  background-color: transparent;
+  color: var(--info);
+}
+.chip-info.chip-text {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--info);
+}
+.chip-success {
+  border-color: var(--success);
+  background-color: var(--success);
+  color: var(--inverse);
+}
+.chip-success.chip-tinted {
+  border-color: var(--success-light);
+  background-color: var(--success-light);
+  color: var(--success);
+}
+.chip-success.chip-outlined {
+  border-color: var(--success);
+  background-color: transparent;
+  color: var(--success);
+}
+.chip-success.chip-text {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--success);
+}
+.chip-warning {
+  border-color: var(--warning);
+  background-color: var(--warning);
+  color: var(--inverse);
+}
+.chip-warning.chip-tinted {
+  border-color: var(--warning-light);
+  background-color: var(--warning-light);
+  color: var(--warning);
+}
+.chip-warning.chip-outlined {
+  border-color: var(--warning);
+  background-color: transparent;
+  color: var(--warning);
+}
+.chip-warning.chip-text {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--warning);
+}
+.chip-danger {
+  border-color: var(--danger);
+  background-color: var(--danger);
+  color: var(--inverse);
+}
+.chip-danger.chip-tinted {
+  border-color: var(--danger-light);
+  background-color: var(--danger-light);
+  color: var(--danger);
+}
+.chip-danger.chip-outlined {
+  border-color: var(--danger);
+  background-color: transparent;
+  color: var(--danger);
+}
+.chip-danger.chip-text {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--danger);
+}
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.text-h1 {
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 54px;
+}
+@media (min-width: 768px) {
+
+  .text-h1 {
+    font-size: 2.5rem;
+    line-height: 60px;
+  }
+
+  .text-h2 {
+    font-size: 2.25rem;
+    line-height: 54px;
+  }
+
+  .text-h3 {
+    font-size: 1.75rem;
+    line-height: 42px;
+  }
+
+  .text-h4 {
+    font-size: 1.5rem;
+    line-height: 36px;
+  }
+
+  .text-h5 {
+    font-size: 1.125rem;
+    line-height: 27px;
+  }
+}
+@media (min-width: 1024px) {
+
+  .text-h1 {
+    font-size: 2.625rem;
+    line-height: 63px;
+  }
+
+  .text-h2 {
+    font-size: 2.25rem;
+    line-height: 54px;
+  }
+
+  .text-h3 {
+    font-size: 2rem;
+    line-height: 48px;
+  }
+
+  .text-h4 {
+    font-size: 1.5rem;
+    line-height: 36px;
+  }
+
+  .text-h5 {
+    font-size: 1.125rem;
+    line-height: 27px;
+  }
+}
+.text-h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 48px;
+}
+.text-h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 36px;
+}
+.text-h4 {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 27px;
+}
+.text-h5 {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 24px;
+}
+.text-title1 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 24px;
+}
+.text-title2 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 21px;
+}
+.text-title3 {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 20px;
+}
+.text-title4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 18px;
+}
+.text-body1 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 32px;
+}
+.text-body2 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 28px;
+}
+.text-body3 {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 26px;
+}
+.text-body4 {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 24px;
+}
+.text-label1 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 22px;
+}
+.text-label2 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 20px;
+}
+.text-label3 {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 18px;
+}
+.text-label4 {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 16px;
+}
+.text-caption1 {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 20px;
+}
+.text-caption2 {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  line-height: 19px;
+}

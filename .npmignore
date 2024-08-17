@@ -6,6 +6,7 @@ test/
 
 # Ignore build directory
 build/
+test/
 build.js
 
 # Ignore log files
