@@ -1,5 +1,3 @@
-@import "../utilities/typography.css";
-
 .chip {
     @apply inline-flex justify-center items-center border;
 }
