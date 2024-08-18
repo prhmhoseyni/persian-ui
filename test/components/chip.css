@@ -1,10 +1,6 @@
 @import "../utilities/typography.css";
 
-.chip{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-width: 1px;
+.chip{ display: inline-flex; align-items: center; justify-content: center; border-width: 1px;
 }
 
 /**
@@ -12,36 +8,16 @@
  * :::: sizes ::::
  */
 
-.chip:not(.chip-xs, .chip-sm, .chip-lg) {
-    @mixins label4;
-    min-height: 1.75rem;
-    border-radius: 0.25rem;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+.chip:not(.chip-xs, .chip-sm, .chip-lg){ font-size: 0.75rem; font-weight: 400; line-height: 16px; /* :::: label4 :::: */ min-height: 1.75rem; border-radius: 0.25rem; padding-left: 0.75rem; padding-right: 0.75rem;
 }
 
-.chip.chip-xs {
-    @mixins label4;
-    min-height: 1.25rem;
-    border-radius: 0.25rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+.chip.chip-xs{ font-size: 0.75rem; font-weight: 400; line-height: 16px; /* :::: label4 :::: */ min-height: 1.25rem; border-radius: 0.25rem; padding-left: 0.5rem; padding-right: 0.5rem;
 }
 
-.chip.chip-sm {
-    @mixins label4;
-    min-height: 1.5rem;
-    border-radius: 0.25rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+.chip.chip-sm{ font-size: 0.75rem; font-weight: 400; line-height: 16px; /* :::: label4 :::: */ min-height: 1.5rem; border-radius: 0.25rem; padding-left: 0.5rem; padding-right: 0.5rem;
 }
 
-.chip.chip-lg {
-    @mixins label3;
-    min-height: 2rem;
-    border-radius: 0.5rem;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+.chip.chip-lg{ font-size: 0.8125rem; font-weight: 400; line-height: 18px; /* :::: label3 :::: */ min-height: 2rem; border-radius: 0.5rem; padding-left: 0.75rem; padding-right: 0.75rem;
 }
 
 /**
@@ -49,8 +25,7 @@
  * :::: rounded full ::::
  */
 
-.chip.chip-rounded-full{
-    border-radius: 9999px;
+.chip.chip-rounded-full{ border-radius: 9999px;
 }
 
 /**

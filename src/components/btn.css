@@ -11,27 +11,27 @@
  */
 
 .btn:not(.btn-xs, .btn-sm, .btn-lg, .btn-xl) {
-    @mixins label3;
+    @apply font-normal text-[0.8125rem] leading-[18px]; /* :::: label3 :::: */
     @apply px-2 min-h-10 rounded-lg;
 }
 
 .btn.btn-xs {
-    @mixins label4;
+    @apply font-normal text-[0.75rem] leading-[16px]; /* :::: label4 :::: */
     @apply px-1 min-h-8 rounded-lg;
 }
 
 .btn.btn-sm {
-    @mixins label3;
+    @apply font-normal text-[0.8125rem] leading-[18px]; /* :::: label3 :::: */
     @apply px-1.5 min-h-9 rounded-lg;
 }
 
 .btn.btn-lg {
-    @mixins label3;
+    @apply font-normal text-[0.8125rem] leading-[18px]; /* :::: label3 :::: */
     @apply px-2.5 min-h-11 rounded-lg;
 }
 
 .btn.btn-xl {
-    @mixins label2;
+    @apply font-normal text-[0.875rem] leading-[20px]; /* :::: label2 :::: */
     @apply px-3 min-h-12 rounded-lg;
 }
 

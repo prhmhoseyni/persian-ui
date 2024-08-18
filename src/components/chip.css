@@ -10,22 +10,22 @@
  */
 
 .chip:not(.chip-xs, .chip-sm, .chip-lg) {
-    @mixins label4;
+    @apply font-normal text-[0.75rem] leading-[16px]; /* :::: label4 :::: */
     @apply px-3 min-h-7 rounded;
 }
 
 .chip.chip-xs {
-    @mixins label4;
+    @apply font-normal text-[0.75rem] leading-[16px]; /* :::: label4 :::: */
     @apply px-2 min-h-5 rounded;
 }
 
 .chip.chip-sm {
-    @mixins label4;
+    @apply font-normal text-[0.75rem] leading-[16px]; /* :::: label4 :::: */
     @apply px-2 min-h-6 rounded;
 }
 
 .chip.chip-lg {
-    @mixins label3;
+    @apply font-normal text-[0.8125rem] leading-[18px]; /* :::: label3 :::: */
     @apply px-3 min-h-8 rounded-lg;
 }
 
