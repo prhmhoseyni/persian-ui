@@ -5,7 +5,9 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "postcss ./src/main.css -o ./src/output.css --watch",
+    "dev": "postcss src/*/*.css --base src --dir test --watch",
+    "storybook": "postcss ./src/main.css -o ./.storybook/tailwind.css && storybook dev -p 6006",
+    "build:storybook": "storybook build",
     "build": "node build.js --base && node build.js --components && node build.js --utilities"
   },
   "repository": {
@@ -19,10 +21,23 @@
   },
   "homepage": "https://github.com/prhmhoseyni/DIG#readme",
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.1",
+    "@storybook/addon-essentials": "^8.2.7",
+    "@storybook/addon-links": "^8.2.7",
+    "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
+    "@storybook/blocks": "^8.2.7",
+    "@storybook/test": "^8.2.7",
+    "@storybook/web-components": "^8.2.7",
+    "@storybook/web-components-webpack5": "^8.2.7",
     "autoprefixer": "^10.4.19",
     "fs-extra": "^11.2.0",
-    "postcss": "^8.4.40",
+    "lit": "^3.2.0",
+    "postcss": "^8.4.41",
     "postcss-cli": "^11.0.0",
+    "postcss-each": "^1.1.0",
+    "postcss-mixins": "^10.0.1",
+    "postcss-nested": "^6.2.0",
+    "storybook": "^8.2.7",
     "tailwindcss": "^3.4.7"
   },
   "files": [
@@ -30,5 +45,8 @@
     "config/",
     "dist/",
     "README.md"
-  ]
+  ],
+  "dependencies": {
+    "color": "^4.2.3"
+  }
 }

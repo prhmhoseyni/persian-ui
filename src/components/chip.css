@@ -1,0 +1,82 @@
+@import "../utilities/typography.css";
+
+.chip {
+    @apply inline-flex justify-center items-center border;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: sizes ::::
+ */
+
+.chip:not(.chip-xs, .chip-sm, .chip-lg) {
+    @mixins label4;
+    @apply px-3 min-h-7 rounded;
+}
+
+.chip.chip-xs {
+    @mixins label4;
+    @apply px-2 min-h-5 rounded;
+}
+
+.chip.chip-sm {
+    @mixins label4;
+    @apply px-2 min-h-6 rounded;
+}
+
+.chip.chip-lg {
+    @mixins label3;
+    @apply px-3 min-h-8 rounded-lg;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: rounded full ::::
+ */
+
+.chip.chip-rounded-full {
+    @apply rounded-full;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: variants ::::
+ */
+
+@each $color in (brand, info, success, warning, danger, gray) {
+    /*
+     * :::: contained ::::
+     */
+    .chip-$(color) {
+        color: rgb(var(--inverse));
+        background-color: rgb(var(--$(color)));
+        border-color: rgb(var(--$(color)));
+    }
+
+    /*
+     * :::: tinted ::::
+     */
+    .chip-$(color).chip-tinted {
+        color: rgb(var(--$(color)));
+        background-color: rgb(var(--$(color)-light));
+        border-color: rgb(var(--$(color)-light));
+    }
+
+    /*
+     * :::: outlined ::::
+     */
+    .chip-$(color).chip-outlined {
+        color: rgb(var(--$(color)));
+        background-color: transparent;
+        border-color: rgb(var(--$(color)));
+    }
+
+    /*
+     * :::: text ::::
+     */
+    .chip-$(color).chip-text {
+        color: rgb(var(--$(color)));
+        background-color: transparent;
+        border-color: transparent;
+    }
+}

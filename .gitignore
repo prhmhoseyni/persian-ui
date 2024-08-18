@@ -7,6 +7,7 @@ pnpm-lock.yaml
 
 # production
 /build
+/test/*/*.css
 
 # editor directories and files
 .vscode/*

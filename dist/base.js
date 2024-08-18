@@ -1,1 +1,1 @@
-module.exports = {"*":{"boxSizing":"border-box"},"html":{"scrollBehavior":"smooth"}};
+module.exports = {"@import url(\"https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap\")":true,"*":{"fontFamily":"\"Vazirmatn\", sans-serif !important","boxSizing":"border-box"},"html":{"scrollBehavior":"smooth"}};
