@@ -1,5 +1,8 @@
+@import "../utilities/typography.css";
+
 .btn {
     @apply inline-flex justify-center items-center border;
+    @apply transition-colors ease-in-out;
 }
 
 /**
@@ -8,27 +11,27 @@
  */
 
 .btn:not(.btn-xs, .btn-sm, .btn-lg, .btn-xl) {
-    @apply font-normal text-[0.8125rem] leading-[18px]; /* Label 3 */
+    @mixins label3;
     @apply px-2 min-h-10 rounded-lg;
 }
 
 .btn.btn-xs {
-    @apply font-normal text-[0.75rem] leading-[16px]; /* Label 4 */
+    @mixins label4;
     @apply px-1 min-h-8 rounded-lg;
 }
 
 .btn.btn-sm {
-    @apply font-normal text-[0.8125rem] leading-[18px]; /* Label 3 */
+    @mixins label3;
     @apply px-1.5 min-h-9 rounded-lg;
 }
 
 .btn.btn-lg {
-    @apply font-normal text-[0.8125rem] leading-[18px]; /* Label 3 */
+    @mixins label3;
     @apply px-2.5 min-h-11 rounded-lg;
 }
 
 .btn.btn-xl {
-    @apply font-normal text-[0.875rem] leading-[20px]; /* Label 2 */
+    @mixins label2;
     @apply px-3 min-h-12 rounded-lg;
 }
 
@@ -43,167 +46,125 @@
 
 /**
  * ---------------------------------------------------------------------------------------------------------------------
- * :::: brand ::::
+ * :::: variants ::::
  */
 
-/* :::: contained :::: */
-.btn-brand {
-    @apply bg-brand border-brand text-inverse;
-    @apply hover:bg-brand--hover hover:border-brand--hover hover:text-inverse;
-    @apply active:bg-brand--active active:border-brand--active active:text-inverse;
-}
+@each $color in (brand, info, success, warning, danger, gray) {
+    /*
+     * :::: contained ::::
+     */
+    .btn-$(color) {
+        color: rgb(var(--inverse));
+        background-color: rgb(var(--$(color)));
+        border-color: rgb(var(--$(color)));
 
-/* :::: tinted :::: */
-.btn-brand.btn-tinted {
-    @apply bg-brand-light border-brand-light text-brand;
-    @apply hover:bg-brand-light--hover hover:border-brand-light--hover hover:text-brand--hover;
-    @apply active:bg-brand-light--active active:border-brand-light--active active:text-brand--active;
-}
+        &:hover {
+            color: rgb(var(--inverse));
+            background-color: rgb(var(--$(color)--hover));
+            border-color: rgb(var(--$(color)--hover));
+        }
 
-/* :::: outlined :::: */
-.btn-brand.btn-outlined {
-    @apply bg-transparent border-brand text-brand;
-    @apply hover:bg-brand-light--hover hover:border-brand--hover hover:text-brand--hover;
-    @apply active:bg-brand-light--active active:border-brand--active active:text-brand--active;
-}
+        &:active {
+            color: rgb(var(--inverse));
+            background-color: rgb(var(--$(color)--active));
+            border-color: rgb(var(--$(color)--active));
+        }
 
-/* :::: text :::: */
-.btn-brand.btn-text {
-    @apply bg-transparent border-transparent text-brand;
-    @apply hover:bg-transparent hover:border-transparent hover:text-brand--hover;
-    @apply active:bg-transparent active:border-transparent active:text-brand--active;
-}
+        &:disabled,
+        &:hover:disabled,
+        &:active:disabled {
+            color: rgb(var(--disabled));
+            background-color: rgb(var(--gray-light));
+            border-color: rgb(var(--gray-light));
+        }
+    }
 
-/**
- * ---------------------------------------------------------------------------------------------------------------------
- * :::: info ::::
- */
+    /*
+     * :::: tinted ::::
+     */
+    .btn-$(color).btn-tinted {
+        color: rgb(var(--$(color)));
+        background-color: rgb(var(--$(color)-light));
+        border-color: rgb(var(--$(color)-light));
 
-/* :::: contained :::: */
-.btn-info {
-    @apply bg-info border-info text-inverse;
-    @apply hover:bg-info--hover hover:border-info--hover hover:text-inverse;
-    @apply active:bg-info--active active:border-info--active active:text-inverse;
-}
+        &:hover {
+            color: rgb(var(--$(color)--hover));
+            background-color: rgb(var(--$(color)-light--hover));
+            border-color: rgb(var(--$(color)-light--hover));
+        }
 
-/* :::: tinted :::: */
-.btn-info.btn-tinted {
-    @apply bg-info-light border-info-light text-info;
-    @apply hover:bg-info-light--hover hover:border-info-light--hover hover:text-info--hover;
-    @apply active:bg-info-light--active active:border-info-light--active active:text-info--active;
-}
+        &:active {
+            color: rgb(var(--$(color)--active));
+            background-color: rgb(var(--$(color)-light--active));
+            border-color: rgb(var(--$(color)-light--active));
+        }
 
-/* :::: outlined :::: */
-.btn-info.btn-outlined {
-    @apply bg-transparent border-info text-info;
-    @apply hover:bg-info-light--hover hover:border-info--hover hover:text-info--hover;
-    @apply active:bg-info-light--active active:border-info--active active:text-info--active;
-}
+        &:disabled,
+        &:hover:disabled,
+        &:active:disabled {
+            color: rgb(var(--disabled));
+            background-color: rgb(var(--gray-light));
+            border-color: rgb(var(--gray-light));
+        }
+    }
 
-/* :::: text :::: */
-.btn-info.btn-text {
-    @apply bg-transparent border-transparent text-info;
-    @apply hover:bg-transparent hover:border-transparent hover:text-info--hover;
-    @apply active:bg-transparent active:border-transparent active:text-info--active;
-}
+    /*
+     * :::: outlined ::::
+     */
+    .btn-$(color).btn-outlined {
+        color: rgb(var(--$(color)));
+        background-color: transparent;
+        border-color: rgb(var(--$(color)));
 
-/**
- * ---------------------------------------------------------------------------------------------------------------------
- * :::: success ::::
- */
+        &:hover {
+            color: rgb(var(--$(color)--hover));
+            background-color: rgb(var(--$(color)-light--hover));
+            border-color: rgb(var(--$(color)--hover));
+        }
 
-/* :::: contained :::: */
-.btn-success {
-    @apply bg-success border-success text-inverse;
-    @apply hover:bg-success--hover hover:border-success--hover hover:text-inverse;
-    @apply active:bg-success--active active:border-success--active active:text-inverse;
-}
+        &:active {
+            color: rgb(var(--$(color)--active));
+            background-color: rgb(var(--$(color)-light--active));
+            border-color: rgb(var(--$(color)--active));
+        }
 
-/* :::: tinted :::: */
-.btn-success.btn-tinted {
-    @apply bg-success-light border-success-light text-success;
-    @apply hover:bg-success-light--hover hover:border-success-light--hover hover:text-success--hover;
-    @apply active:bg-success-light--active active:border-success-light--active active:text-success--active;
-}
+        &:disabled,
+        &:hover:disabled,
+        &:active:disabled {
+            color: rgb(var(--disabled));
+            background-color: transparent;
+            border-color: rgb(var(--gray));
+        }
+    }
 
-/* :::: outlined :::: */
-.btn-success.btn-outlined {
-    @apply bg-transparent border-success text-success;
-    @apply hover:bg-success-light--hover hover:border-success--hover hover:text-success--hover;
-    @apply active:bg-success-light--active active:border-success--active active:text-success--active;
-}
+    /*
+     * :::: text ::::
+     */
+    .btn-$(color).btn-text {
+        color: rgb(var(--$(color)));
+        background-color: transparent;
+        border-color: transparent;
 
-/* :::: text :::: */
-.btn-success.btn-text {
-    @apply bg-transparent border-transparent text-success;
-    @apply hover:bg-transparent hover:border-transparent hover:text-success--hover;
-    @apply active:bg-transparent active:border-transparent active:text-success--active;
-}
+        &:hover {
+            color: rgb(var(--$(color)--hover));
+            background-color: transparent;
+            border-color: transparent;
+        }
 
-/**
- * ---------------------------------------------------------------------------------------------------------------------
- * :::: warning ::::
- */
+        &:active {
+            color: rgb(var(--$(color)--active));
+            background-color: transparent;
+            border-color: transparent;
+        }
 
-/* :::: contained :::: */
-.btn-warning {
-    @apply bg-warning border-warning text-inverse;
-    @apply hover:bg-warning--hover hover:border-warning--hover hover:text-inverse;
-    @apply active:bg-warning--active active:border-warning--active active:text-inverse;
-}
-
-/* :::: tinted :::: */
-.btn-warning.btn-tinted {
-    @apply bg-warning-light border-warning-light text-warning;
-    @apply hover:bg-warning-light--hover hover:border-warning-light--hover hover:text-warning--hover;
-    @apply active:bg-warning-light--active active:border-warning-light--active active:text-warning--active;
-}
-
-/* :::: outlined :::: */
-.btn-warning.btn-outlined {
-    @apply bg-transparent border-warning text-warning;
-    @apply hover:bg-warning-light--hover hover:border-warning--hover hover:text-warning--hover;
-    @apply active:bg-warning-light--active active:border-warning--active active:text-warning--active;
-}
-
-/* :::: text :::: */
-.btn-warning.btn-text {
-    @apply bg-transparent border-transparent text-warning;
-    @apply hover:bg-transparent hover:border-transparent hover:text-warning--hover;
-    @apply active:bg-transparent active:border-transparent active:text-warning--active;
-}
-
-/**
- * ---------------------------------------------------------------------------------------------------------------------
- * :::: danger ::::
- */
-
-/* :::: contained :::: */
-.btn-danger {
-    @apply bg-danger border-danger text-inverse;
-    @apply hover:bg-danger--hover hover:border-danger--hover hover:text-inverse;
-    @apply active:bg-danger--active active:border-danger--active active:text-inverse;
-}
-
-/* :::: tinted :::: */
-.btn-danger.btn-tinted {
-    @apply bg-danger-light border-danger-light text-danger;
-    @apply hover:bg-danger-light--hover hover:border-danger-light--hover hover:text-danger--hover;
-    @apply active:bg-danger-light--active active:border-danger-light--active active:text-danger--active;
-}
-
-/* :::: outlined :::: */
-.btn-danger.btn-outlined {
-    @apply bg-transparent border-danger text-danger;
-    @apply hover:bg-danger-light--hover hover:border-danger--hover hover:text-danger--hover;
-    @apply active:bg-danger-light--active active:border-danger--active active:text-danger--active;
-}
-
-/* :::: text :::: */
-.btn-danger.btn-text {
-    @apply bg-transparent border-transparent text-danger;
-    @apply hover:bg-transparent hover:border-transparent hover:text-danger--hover;
-    @apply active:bg-transparent active:border-transparent active:text-danger--active;
+        &:disabled,
+        &:hover:disabled,
+        &:active:disabled {
+            color: rgb(var(--disabled));
+            background-color: transparent;
+            border-color: transparent;
+        }
+    }
 }
 
 /**
@@ -213,32 +174,4 @@
 
 .btn:disabled {
     @apply cursor-not-allowed;
-}
-
-/* :::: contained :::: */
-.btn:disabled {
-    @apply bg-gray-200 border-gray-200 text-disabled;
-    @apply hover:bg-gray-200 hover:border-gray-200 hover:text-disabled;
-    @apply active:bg-gray-200 active:border-gray-200 active:text-disabled;
-}
-
-/* :::: tinted :::: */
-.btn-tinted:disabled {
-    @apply bg-gray-100 border-gray-100 text-disabled;
-    @apply hover:bg-gray-100 hover:border-gray-100 hover:text-disabled;
-    @apply active:bg-gray-100 active:border-gray-100 active:text-disabled;
-}
-
-/* :::: outlined :::: */
-.btn-outlined:disabled {
-    @apply bg-transparent border-gray-200 text-disabled;
-    @apply hover:bg-transparent hover:border-gray-200 hover:text-disabled;
-    @apply active:bg-transparent active:border-gray-200 active:text-disabled;
-}
-
-/* :::: text :::: */
-.btn-text:disabled {
-    @apply bg-transparent border-transparent text-disabled;
-    @apply hover:bg-transparent hover:border-transparent hover:text-disabled;
-    @apply active:bg-transparent active:border-transparent active:text-disabled;
 }

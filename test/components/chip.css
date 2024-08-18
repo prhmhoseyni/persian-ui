@@ -1,4 +1,10 @@
-.chip { display: inline-flex; align-items: center; justify-content: center; border-width: 1px
+@import "../utilities/typography.css";
+
+.chip{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-width: 1px;
 }
 
 /**
@@ -6,16 +12,36 @@
  * :::: sizes ::::
  */
 
-.chip:not(.chip-xs, .chip-sm, .chip-lg) { font-size: 0.75rem; font-weight: 400; line-height: 16px; /* Label 4 */ min-height: 1.75rem; border-radius: 0.25rem; padding-left: 0.75rem; padding-right: 0.75rem
+.chip:not(.chip-xs, .chip-sm, .chip-lg) {
+    @mixins label4;
+    min-height: 1.75rem;
+    border-radius: 0.25rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
 }
 
-.chip.chip-xs { font-size: 0.75rem; font-weight: 400; line-height: 16px; /* Label 4 */ min-height: 1.25rem; border-radius: 0.25rem; padding-left: 0.5rem; padding-right: 0.5rem
+.chip.chip-xs {
+    @mixins label4;
+    min-height: 1.25rem;
+    border-radius: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
-.chip.chip-sm { font-size: 0.75rem; font-weight: 400; line-height: 16px; /* Label 4 */ min-height: 1.5rem; border-radius: 0.25rem; padding-left: 0.5rem; padding-right: 0.5rem
+.chip.chip-sm {
+    @mixins label4;
+    min-height: 1.5rem;
+    border-radius: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
-.chip.chip-lg { font-size: 0.8125rem; font-weight: 400; line-height: 18px; /* Label 3 */ min-height: 2rem; border-radius: 0.5rem; padding-left: 0.75rem; padding-right: 0.75rem
+.chip.chip-lg {
+    @mixins label3;
+    min-height: 2rem;
+    border-radius: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
 }
 
 /**
@@ -23,110 +49,251 @@
  * :::: rounded full ::::
  */
 
-.chip.chip-rounded-full { border-radius: 9999px
+.chip.chip-rounded-full{
+    border-radius: 9999px;
 }
 
 /**
  * ---------------------------------------------------------------------------------------------------------------------
- * :::: brand ::::
+ * :::: variants ::::
  */
 
-/* :::: contained :::: */
-.chip-brand { border-color: var(--brand); background-color: var(--brand); color: var(--inverse)
-}
+/*
+     * :::: contained ::::
+     */
 
-/* :::: tinted :::: */
-.chip-brand.chip-tinted { border-color: var(--brand-light); background-color: var(--brand-light); color: var(--brand)
-}
+.chip-brand {
+        color: rgb(var(--inverse));
+        background-color: rgb(var(--brand));
+        border-color: rgb(var(--brand));
+    }
 
-/* :::: outlined :::: */
-.chip-brand.chip-outlined { border-color: var(--brand); background-color: transparent; color: var(--brand)
-}
+/*
+     * :::: tinted ::::
+     */
 
-/* :::: text :::: */
-.chip-brand.chip-text { border-color: transparent; background-color: transparent; color: var(--brand)
-}
+.chip-brand.chip-tinted {
+        color: rgb(var(--brand));
+        background-color: rgb(var(--brand-light));
+        border-color: rgb(var(--brand-light));
+    }
 
-/**
- * ---------------------------------------------------------------------------------------------------------------------
- * :::: info ::::
- */
+/*
+     * :::: outlined ::::
+     */
 
-/* :::: contained :::: */
-.chip-info { border-color: var(--info); background-color: var(--info); color: var(--inverse)
-}
+.chip-brand.chip-outlined {
+        color: rgb(var(--brand));
+        background-color: transparent;
+        border-color: rgb(var(--brand));
+    }
 
-/* :::: tinted :::: */
-.chip-info.chip-tinted { border-color: var(--info-light); background-color: var(--info-light); color: var(--info)
-}
+/*
+     * :::: text ::::
+     */
 
-/* :::: outlined :::: */
-.chip-info.chip-outlined { border-color: var(--info); background-color: transparent; color: var(--info)
-}
+.chip-brand.chip-text {
+        color: rgb(var(--brand));
+        background-color: transparent;
+        border-color: transparent;
+    }
 
-/* :::: text :::: */
-.chip-info.chip-text { border-color: transparent; background-color: transparent; color: var(--info)
-}
+/*
+     * :::: contained ::::
+     */
 
-/**
- * ---------------------------------------------------------------------------------------------------------------------
- * :::: success ::::
- */
+.chip-info {
+        color: rgb(var(--inverse));
+        background-color: rgb(var(--info));
+        border-color: rgb(var(--info));
+    }
 
-/* :::: contained :::: */
-.chip-success { border-color: var(--success); background-color: var(--success); color: var(--inverse)
-}
+/*
+     * :::: tinted ::::
+     */
 
-/* :::: tinted :::: */
-.chip-success.chip-tinted { border-color: var(--success-light); background-color: var(--success-light); color: var(--success)
-}
+.chip-info.chip-tinted {
+        color: rgb(var(--info));
+        background-color: rgb(var(--info-light));
+        border-color: rgb(var(--info-light));
+    }
 
-/* :::: outlined :::: */
-.chip-success.chip-outlined { border-color: var(--success); background-color: transparent; color: var(--success)
-}
+/*
+     * :::: outlined ::::
+     */
 
-/* :::: text :::: */
-.chip-success.chip-text { border-color: transparent; background-color: transparent; color: var(--success)
-}
+.chip-info.chip-outlined {
+        color: rgb(var(--info));
+        background-color: transparent;
+        border-color: rgb(var(--info));
+    }
 
-/**
- * ---------------------------------------------------------------------------------------------------------------------
- * :::: warning ::::
- */
+/*
+     * :::: text ::::
+     */
 
-/* :::: contained :::: */
-.chip-warning { border-color: var(--warning); background-color: var(--warning); color: var(--inverse)
-}
+.chip-info.chip-text {
+        color: rgb(var(--info));
+        background-color: transparent;
+        border-color: transparent;
+    }
 
-/* :::: tinted :::: */
-.chip-warning.chip-tinted { border-color: var(--warning-light); background-color: var(--warning-light); color: var(--warning)
-}
+/*
+     * :::: contained ::::
+     */
 
-/* :::: outlined :::: */
-.chip-warning.chip-outlined { border-color: var(--warning); background-color: transparent; color: var(--warning)
-}
+.chip-success {
+        color: rgb(var(--inverse));
+        background-color: rgb(var(--success));
+        border-color: rgb(var(--success));
+    }
 
-/* :::: text :::: */
-.chip-warning.chip-text { border-color: transparent; background-color: transparent; color: var(--warning)
-}
+/*
+     * :::: tinted ::::
+     */
 
-/**
- * ---------------------------------------------------------------------------------------------------------------------
- * :::: danger ::::
- */
+.chip-success.chip-tinted {
+        color: rgb(var(--success));
+        background-color: rgb(var(--success-light));
+        border-color: rgb(var(--success-light));
+    }
 
-/* :::: contained :::: */
-.chip-danger { border-color: var(--danger); background-color: var(--danger); color: var(--inverse)
-}
+/*
+     * :::: outlined ::::
+     */
 
-/* :::: tinted :::: */
-.chip-danger.chip-tinted { border-color: var(--danger-light); background-color: var(--danger-light); color: var(--danger)
-}
+.chip-success.chip-outlined {
+        color: rgb(var(--success));
+        background-color: transparent;
+        border-color: rgb(var(--success));
+    }
 
-/* :::: outlined :::: */
-.chip-danger.chip-outlined { border-color: var(--danger); background-color: transparent; color: var(--danger)
-}
+/*
+     * :::: text ::::
+     */
 
-/* :::: text :::: */
-.chip-danger.chip-text { border-color: transparent; background-color: transparent; color: var(--danger)
-}
+.chip-success.chip-text {
+        color: rgb(var(--success));
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+/*
+     * :::: contained ::::
+     */
+
+.chip-warning {
+        color: rgb(var(--inverse));
+        background-color: rgb(var(--warning));
+        border-color: rgb(var(--warning));
+    }
+
+/*
+     * :::: tinted ::::
+     */
+
+.chip-warning.chip-tinted {
+        color: rgb(var(--warning));
+        background-color: rgb(var(--warning-light));
+        border-color: rgb(var(--warning-light));
+    }
+
+/*
+     * :::: outlined ::::
+     */
+
+.chip-warning.chip-outlined {
+        color: rgb(var(--warning));
+        background-color: transparent;
+        border-color: rgb(var(--warning));
+    }
+
+/*
+     * :::: text ::::
+     */
+
+.chip-warning.chip-text {
+        color: rgb(var(--warning));
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+/*
+     * :::: contained ::::
+     */
+
+.chip-danger {
+        color: rgb(var(--inverse));
+        background-color: rgb(var(--danger));
+        border-color: rgb(var(--danger));
+    }
+
+/*
+     * :::: tinted ::::
+     */
+
+.chip-danger.chip-tinted {
+        color: rgb(var(--danger));
+        background-color: rgb(var(--danger-light));
+        border-color: rgb(var(--danger-light));
+    }
+
+/*
+     * :::: outlined ::::
+     */
+
+.chip-danger.chip-outlined {
+        color: rgb(var(--danger));
+        background-color: transparent;
+        border-color: rgb(var(--danger));
+    }
+
+/*
+     * :::: text ::::
+     */
+
+.chip-danger.chip-text {
+        color: rgb(var(--danger));
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+/*
+     * :::: contained ::::
+     */
+
+.chip-gray {
+        color: rgb(var(--inverse));
+        background-color: rgb(var(--gray));
+        border-color: rgb(var(--gray));
+    }
+
+/*
+     * :::: tinted ::::
+     */
+
+.chip-gray.chip-tinted {
+        color: rgb(var(--gray));
+        background-color: rgb(var(--gray-light));
+        border-color: rgb(var(--gray-light));
+    }
+
+/*
+     * :::: outlined ::::
+     */
+
+.chip-gray.chip-outlined {
+        color: rgb(var(--gray));
+        background-color: transparent;
+        border-color: rgb(var(--gray));
+    }
+
+/*
+     * :::: text ::::
+     */
+
+.chip-gray.chip-text {
+        color: rgb(var(--gray));
+        background-color: transparent;
+        border-color: transparent;
+    }

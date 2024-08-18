@@ -1,5 +1,6 @@
+const color = require("color");
+
 const ThemeVariables = require("./config/theme-variables");
-const PrimitiveColors = require("./config/primitive-colors");
 
 const base = require("./dist/base");
 const components = require("./dist/components");
@@ -13,14 +14,9 @@ function DotinInterfaceGuide({config, addBase, addComponents, addUtilities}) {
     const DarkTheme = {"color-scheme": "dark"}
 
     for (const [key, value] of Object.entries(ThemeVariables)) {
-        // LightTheme[`--${key}`] = LightThemeCustomConfig[key] ?? PrimitiveColors.light[value];
-        // DarkTheme[`--${key}`] = DarkThemeCustomConfig[key] ?? PrimitiveColors.dark[value];
-
-        LightTheme[`--${key}`] = PrimitiveColors.light[value];
-        DarkTheme[`--${key}`] = PrimitiveColors.dark[value];
+        LightTheme[`--${key}`] = color(value).rgb().array().join(", ");
+        DarkTheme[`--${key}`] = color(value).rgb().array().join(", ");
     }
-
-    // console.log(">>>>", LightTheme, DarkTheme);
 
     /**
      * @example box-sizing, font-family and ...
@@ -45,8 +41,8 @@ module.exports = require("tailwindcss/plugin")(DotinInterfaceGuide, {
                 "hint": "var(--hint)",
                 "disabled": "var(--disabled)",
                 "inverse": "var(--inverse)",
-                "link": "var(--link)",
                 "white": "var(--white)",
+                "link": "var(--link)",
 
                 "brand": "var(--brand)",
                 "brand--hover": "var(--brand--hover)",
@@ -82,12 +78,31 @@ module.exports = require("tailwindcss/plugin")(DotinInterfaceGuide, {
                 "danger-light": "var(--danger-light)",
                 "danger-light--hover": "var(--danger-light--hover)",
                 "danger-light--active": "var(--danger-light--active)",
+
+                "gray": "var(--gray)",
+                "gray--hover": "var(--gray--hover)",
+                "gray--active": "var(--gray--active)",
+                "gray-light": "var(--gray-light)",
+                "gray-light--hover": "var(--gray-light--hover)",
+                "gray-light--active": "var(--gray-light--active)",
+
+                "red": "var(--red)",
+                "orange": "var(--orange)",
+                "yellow": "var(--yellow)",
+                "green": "var(--green)",
+                "mint": "var(--mint)",
+                "teal": "var(--teal)",
+                "cyan": "var(--cyan)",
+                "blue": "var(--blue)",
+                "indigo": "var(--indigo)",
+                "purple": "var(--purple)",
+                "pink": "var(--pink)",
+                "brown": "var(--brown)",
             },
             backgroundColor: {
                 "primary": "var(--bg-primary)",
                 "secondary": "var(--bg-secondary)",
-                "tertiary": "var(--bg-tertiary)",
-                "dialog": "var(--bg-dialog)",
+                "menu": "var(--bg-menu)",
             }
         }
     }

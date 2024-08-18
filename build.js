@@ -1,4 +1,4 @@
-const {exec} = require("child_process");
+const { exec } = require("child_process");
 const fs_extra = require("fs-extra");
 const fs = require("fs");
 const path = require("path");
@@ -61,7 +61,7 @@ function moveFile(type) {
     const componentsDestinationFile = path.join(__dirname, `dist/${type}.js`)
 
     // Move the file
-    fs_extra.move(componentsSourceFile, componentsDestinationFile, {overwrite: true}, (err) => {
+    fs_extra.move(componentsSourceFile, componentsDestinationFile, { overwrite: true }, (err) => {
         if (err) throw err;
     });
 }

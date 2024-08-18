@@ -24,6 +24,7 @@ export enum ChipColor {
     "success" = "chip-success",
     "warning" = "chip-warning",
     "danger" = "chip-danger",
+    "gray" = "chip-gray",
 }
 
 /**
@@ -44,6 +45,11 @@ export default function Chip(props: Props) {
     const roundedFull = props.roundedFull ? "chip-rounded-full" : ""
 
     return html`
-        <div class=${["chip", variant, color, size, roundedFull].filter(Boolean).join(" ")}>${props.label}</div>
+        <div dir="rtl" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+            <div class=${["chip", color, size, roundedFull].filter(Boolean).join(" ")}>${props.label}</div>
+            <div class=${["chip chip-tinted", color, size, roundedFull].filter(Boolean).join(" ")}>${props.label}</div>
+            <div class=${["chip chip-outlined", color, size, roundedFull].filter(Boolean).join(" ")}>${props.label}</div>
+            <div class=${["chip chip-text", color, size, roundedFull].filter(Boolean).join(" ")}>${props.label}</div>
+        </div>
     `;
 };

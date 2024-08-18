@@ -25,7 +25,8 @@ export default {
                 "<span class='css-o1d7ko'>info</span>" +
                 "<span class='css-o1d7ko'>success</span>" +
                 "<span class='css-o1d7ko'>warning</span>" +
-                "<span class='css-o1d7ko'>danger</span>",
+                "<span class='css-o1d7ko'>danger</span>" +
+                "<span class='css-o1d7ko'>gray</span>",
         },
         size: {
             control: {type: "select"},
@@ -38,6 +39,9 @@ export default {
                 "<span class='css-o1d7ko'>xl</span>",
         },
         roundedFull: {
+            control: { type: "boolean" },
+        },
+        disabled: {
             control: { type: "boolean" },
         },
     },

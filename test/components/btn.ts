@@ -25,6 +25,7 @@ export enum BtnColor {
     "success" = "btn-success",
     "warning" = "btn-warning",
     "danger" = "btn-danger",
+    "gray" = "btn-gray",
 }
 
 /**
@@ -36,6 +37,7 @@ interface Props {
     color?: BtnColor;
     size?: BtnSize;
     roundedFull?: boolean;
+    disabled?: boolean;
 }
 
 export default function Btn(props: Props) {
@@ -43,8 +45,21 @@ export default function Btn(props: Props) {
     const color = props.color ? BtnColor[props.color] : BtnColor.brand
     const size = props.size ? BtnSize[props.size] : BtnSize.md
     const roundedFull = props.roundedFull ? "btn-rounded-full" : ""
+    const disabled = props.disabled ? "true" : "false"
 
     return html`
-        <button type="button" class=${["btn", variant, color, size, roundedFull].filter(Boolean).join(" ")}>${props.label}</button>
+        <div dir="rtl" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+            <button type="button" class=${["btn", color, size, roundedFull].filter(Boolean).join(" ")}>${props.label}</button>
+            <button type="button" class=${["btn btn-tinted", color, size, roundedFull].filter(Boolean).join(" ")}>${props.label}</button>
+            <button type="button" class=${["btn btn-outlined", color, size, roundedFull].filter(Boolean).join(" ")}>${props.label}</button>
+            <button type="button" class=${["btn btn-text", color, size, roundedFull].filter(Boolean).join(" ")}>${props.label}</button>
+        </div>
+        
+        <div dir="rtl" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1rem;">
+            <button type="button" disabled class=${["btn", color, size, roundedFull].filter(Boolean).join(" ")}>${props.label}</button>
+            <button type="button" disabled class=${["btn btn-tinted", color, size, roundedFull].filter(Boolean).join(" ")}>${props.label}</button>
+            <button type="button" disabled class=${["btn btn-outlined", color, size, roundedFull].filter(Boolean).join(" ")}>${props.label}</button>
+            <button type="button" disabled class=${["btn btn-text", color, size, roundedFull].filter(Boolean).join(" ")}>${props.label}</button>
+        </div>
     `;
 };

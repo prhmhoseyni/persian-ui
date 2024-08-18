@@ -11,7 +11,7 @@
   box-sizing: border-box; /* 1 */
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
-  border-color: #e5e7eb; /* 2 */
+  border-color: currentColor; /* 2 */
 }
 
 ::before,
@@ -396,47 +396,64 @@ video {
 
 :root {
   color-scheme: light;
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F5F7FA;
-  --bg-menu: #FFFFFF;
-  --bg-dialog: #000000;
-  --primary: #1E1E1E;
-  --secondary: #6D6D6D;
-  --hint: #888888;
-  --disabled: #888888;
-  --inverse: #F6F6F6;
-  --link: #0C8CE9;
-  --white: #FFFFFF;
-  --brand: #0369CD;
-  --brand--hover: #0255A6;
-  --brand--active: #02417E;
-  --brand-light: #F0F7FF;
-  --brand-light--hover: #E0EFFF;
-  --brand-light--active: #C2DFFF;
-  --info: #209CD7;
-  --info--hover: #127DB7;
-  --info--active: #106494;
-  --info-light: #F1F9FE;
-  --info-light--hover: #E2F2FC;
-  --info-light--active: #BFE3F8;
-  --success: #34CB5A;
-  --success--hover: #239A41;
-  --success--active: #1F7A37;
-  --success-light: #F7FDF8;
-  --success-light--hover: #E5FAEA;
-  --success-light--active: #C4F3CF;
-  --warning: #FF9500;
-  --warning--hover: #EB7100;
-  --warning--active: #C54D02;
-  --warning-light: #FFFDF5;
-  --warning-light--hover: #FFF4D1;
-  --warning-light--active: #FFE78F;
-  --danger: #F0493D;
-  --danger--hover: #DF362A;
-  --danger--active: #C1251A;
-  --danger-light: #FEF6F6;
-  --danger-light--hover: #FEE8E6;
-  --danger-light--active: #FFCFCC;
+  --bg-primary: 255, 255, 255;
+  --bg-secondary: 246, 247, 248;
+  --bg-menu: 255, 255, 255;
+  --primary: 12, 14, 16;
+  --secondary: 102, 117, 133;
+  --hint: 154, 166, 177;
+  --disabled: 154, 166, 177;
+  --inverse: 246, 247, 248;
+  --white: 255, 255, 255;
+  --link: 32, 156, 215;
+  --brand: 3, 105, 205;
+  --brand--hover: 2, 85, 166;
+  --brand--active: 2, 65, 126;
+  --brand-light: 230, 242, 255;
+  --brand-light--hover: 205, 229, 254;
+  --brand-light--active: 180, 217, 254;
+  --info: 32, 156, 215;
+  --info--hover: 18, 125, 183;
+  --info--active: 16, 100, 148;
+  --info-light: 231, 245, 253;
+  --info-light--hover: 209, 234, 250;
+  --info-light--active: 186, 225, 247;
+  --success: 16, 185, 129;
+  --success--hover: 27, 162, 117;
+  --success--active: 22, 131, 95;
+  --success-light: 236, 249, 244;
+  --success-light--hover: 217, 242, 234;
+  --success-light--active: 198, 236, 223;
+  --warning: 255, 149, 0;
+  --warning--hover: 235, 113, 0;
+  --warning--active: 197, 77, 2;
+  --warning-light: 255, 250, 229;
+  --warning-light--hover: 255, 243, 204;
+  --warning-light--active: 255, 239, 178;
+  --danger: 224, 62, 26;
+  --danger--hover: 201, 56, 23;
+  --danger--active: 173, 48, 20;
+  --danger-light: 253, 244, 241;
+  --danger-light--hover: 252, 232, 228;
+  --danger-light--active: 250, 217, 209;
+  --gray: 154, 166, 177;
+  --gray--hover: 102, 117, 133;
+  --gray--active: 12, 14, 16;
+  --gray-light: 246, 247, 248;
+  --gray-light--hover: 246, 247, 248;
+  --gray-light--active: 238, 240, 242;
+  --red: 255, 59, 48;
+  --orange: 255, 149, 0;
+  --yellow: 255, 204, 0;
+  --green: 52, 199, 89;
+  --mint: 0, 199, 190;
+  --teal: 48, 176, 199;
+  --cyan: 50, 173, 230;
+  --blue: 12, 140, 233;
+  --indigo: 88, 86, 214;
+  --purple: 175, 82, 222;
+  --pink: 255, 45, 85;
+  --brown: 162, 132, 94;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap");
@@ -1131,6 +1148,39 @@ html {
   border-color: transparent;
   background-color: transparent;
   color: var(--danger);
+}
+.flex {
+  display: flex;
+}
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
