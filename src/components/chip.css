@@ -1,5 +1,5 @@
 .chip {
-    @apply inline-flex justify-center items-center border;
+    @apply inline-flex justify-between items-center gap-1 border;
 }
 
 /**

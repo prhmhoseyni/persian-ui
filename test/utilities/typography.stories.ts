@@ -1,7 +1,7 @@
 import Typography, {TypographyVariant} from './typography';
 
 export default {
-    title: "utilities/typography",
+    title: "utilities/Typography",
     tags: ["autodocs"],
     render: (args) => Typography(args),
     argTypes: {

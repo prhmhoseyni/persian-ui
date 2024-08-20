@@ -1,4 +1,4 @@
-.btn {
+.icon-btn {
     @apply inline-flex justify-between items-center gap-2 border;
     @apply transition-colors ease-in-out;
 }
@@ -8,29 +8,29 @@
  * :::: sizes ::::
  */
 
-.btn:not(.btn-xs, .btn-sm, .btn-lg, .btn-xl) {
+.icon-btn:not(.icon-btn-xs, .icon-btn-sm, .icon-btn-lg, .icon-btn-xl) {
     @apply font-normal text-[0.8125rem] leading-[18px]; /* :::: label3 :::: */
-    @apply px-2 min-h-10 rounded-lg;
+    @apply p-2 min-h-10 min-w-10 rounded-lg;
 }
 
-.btn.btn-xs {
+.icon-btn.icon-btn-xs {
     @apply font-normal text-[0.75rem] leading-[16px]; /* :::: label4 :::: */
-    @apply px-1 min-h-8 rounded-lg;
+    @apply p-1 min-h-8 min-w-8 rounded-lg;
 }
 
-.btn.btn-sm {
+.icon-btn.icon-btn-sm {
     @apply font-normal text-[0.8125rem] leading-[18px]; /* :::: label3 :::: */
-    @apply px-1.5 min-h-9 rounded-lg;
+    @apply p-1.5 min-h-9 min-w-9 rounded-lg;
 }
 
-.btn.btn-lg {
+.icon-btn.icon-btn-lg {
     @apply font-normal text-[0.8125rem] leading-[18px]; /* :::: label3 :::: */
-    @apply px-2.5 min-h-11 rounded-lg;
+    @apply p-2.5 min-h-11 min-w-11 rounded-lg;
 }
 
-.btn.btn-xl {
+.icon-btn.icon-btn-xl {
     @apply font-normal text-[0.875rem] leading-[20px]; /* :::: label2 :::: */
-    @apply px-3 min-h-12 rounded-lg;
+    @apply p-3 min-h-12 min-w-12 rounded-lg;
 }
 
 /**
@@ -38,7 +38,7 @@
  * :::: rounded full ::::
  */
 
-.btn.btn-rounded-full {
+.icon-btn.icon-btn-rounded-full {
     @apply rounded-full;
 }
 
@@ -51,7 +51,7 @@
     /*
      * :::: contained ::::
      */
-    .btn-$(color) {
+    .icon-btn-$(color) {
         color: rgb(var(--inverse));
         background-color: rgb(var(--$(color)));
         border-color: rgb(var(--$(color)));
@@ -80,7 +80,7 @@
     /*
      * :::: tinted ::::
      */
-    .btn-$(color).btn-tinted {
+    .icon-btn-$(color).icon-btn-tinted {
         color: rgb(var(--$(color)));
         background-color: rgb(var(--$(color)-light));
         border-color: rgb(var(--$(color)-light));
@@ -109,7 +109,7 @@
     /*
      * :::: outlined ::::
      */
-    .btn-$(color).btn-outlined {
+    .icon-btn-$(color).icon-btn-outlined {
         color: rgb(var(--$(color)));
         background-color: transparent;
         border-color: rgb(var(--$(color)));
@@ -138,7 +138,7 @@
     /*
      * :::: text ::::
      */
-    .btn-$(color).btn-text {
+    .icon-btn-$(color).icon-btn-text {
         color: rgb(var(--$(color)));
         background-color: transparent;
         border-color: transparent;
@@ -170,6 +170,6 @@
  * :::: disabled ::::
  */
 
-.btn:disabled {
+.icon-btn:disabled {
     @apply cursor-not-allowed;
 }

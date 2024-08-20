@@ -1,24 +1,21 @@
-import Btn, {BtnColor, BtnSize, BtnVariant} from './btn';
+import IconButton, {IconButtonColor, IconButtonSize, IconButtonVariant} from './icon-btn';
 
 export default {
-    title: "components/Button",
+    title: "components/Icon Button",
     tags: ["autodocs"],
-    render: (args) => Btn(args),
+    render: (args) => IconButton(args),
     argTypes: {
-        label: {
-            control: "text"
-        },
         variant: {
             control: {type: "select"},
-            options: Object.keys(BtnVariant),
+            options: Object.keys(IconButtonVariant),
         },
         color: {
             control: {type: "select"},
-            options: Object.keys(BtnColor),
+            options: Object.keys(IconButtonColor),
         },
         size: {
             control: {type: "select"},
-            options: Object.keys(BtnSize),
+            options: Object.keys(IconButtonSize),
         },
         roundedFull: {
             control: { type: "boolean" },
@@ -30,8 +27,6 @@ export default {
 };
 
 export const Primary = {
-    args: {
-        label: "فشارم بده",
-    },
+    args: {},
 };
 
