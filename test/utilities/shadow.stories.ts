@@ -1,7 +1,7 @@
 import Shadow from './shadow';
 
 export default {
-    title: "utilities/shadow",
+    title: "utilities/Shadow",
     tags: ["autodocs"],
     render: () => Shadow(),
     argTypes: {},
