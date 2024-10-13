@@ -1,7 +1,7 @@
 {
   "name": "persian-ui",
-  "version": "1.0.2",
-  "description": "Dotin Interface Guide",
+  "version": "1.1.0",
+  "description": "Persian UI",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prhmhoseyni/DIG.git"
+    "url": "git+https://github.com/prhmhoseyni/perisan-ui.git"
   },
   "author": "Parham Hoseyni",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/prhmhoseyni/DIG/issues"
+    "url": "https://github.com/prhmhoseyni/perisan-ui/issues"
   },
-  "homepage": "https://github.com/prhmhoseyni/DIG#readme",
+  "homepage": "https://github.com/prhmhoseyni/perisan-ui#readme",
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
     "@storybook/addon-essentials": "^8.2.7",
