@@ -6,7 +6,7 @@ input[type="radio"].radio {
     min-height: 1.25rem;
     height: 1.25rem;
     background-color: rgb(var(--bg-primary));
-    border: 1px solid #EEF0F2; /* TODo: read from theme */
+    border: 1px solid #EEF0F2; /* TODO: read from theme */
     border-radius: 50%;
     position: relative;
     overflow: hidden;
@@ -26,8 +26,9 @@ input[type="radio"].radio {
          */
 
         &:disabled {
-            border-color: #EEF0F2; /* TODo: read from theme */
-            background-color: #F2F2F7; /* TODo: read from theme */
+            border-color: #EEF0F2; /* TODO: read from theme */
+            background-color: #F2F2F7; /* TODO: read from theme */
+            cursor: not-allowed;
         }
     }
 
@@ -36,8 +37,9 @@ input[type="radio"].radio {
      */
 
     &:disabled {
-        border-color: #EEF0F2; /* TODo: read from theme */
-        background-color: #F2F2F7; /* TODo: read from theme */
+        border-color: #EEF0F2; /* TODO: read from theme */
+        background-color: #F2F2F7; /* TODO: read from theme */
+        cursor: not-allowed;
     }
 }
 

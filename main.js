@@ -6,16 +6,21 @@ const base = require("./dist/base");
 const components = require("./dist/components");
 const utilities = require("./dist/utilities");
 
-function DotinInterfaceGuide({config, addBase, addComponents, addUtilities}) {
-    // const LightThemeCustomConfig = config("dig.themes.light") ?? {}
-    // const DarkThemeCustomConfig = config("dig.themes.dark") ?? {}
+function PersianUI({config, addBase, addComponents, addUtilities}) {
+    const LightThemeCustomConfig = config("persian-ui.themes.light") ?? {}
+    const DarkThemeCustomConfig = config("persian-ui.themes.dark") ?? {}
 
     const LightTheme = {"color-scheme": "light"}
     const DarkTheme = {"color-scheme": "dark"}
 
     for (const [key, value] of Object.entries(ThemeVariables)) {
-        LightTheme[`--${key}`] = color(value).rgb().array().join(", ");
-        DarkTheme[`--${key}`] = color(value).rgb().array().join(", ");
+        LightTheme[`--${key}`] =  LightThemeCustomConfig[key]
+            ? color(LightThemeCustomConfig[key]).rgb().array().join(", ")
+            : color(value).rgb().array().join(", ");
+
+        DarkTheme[`--${key}`] = DarkThemeCustomConfig[key]
+            ? color(DarkThemeCustomConfig[key]).rgb().array().join(", ")
+            : color(value).rgb().array().join(", ");
     }
 
     /**
@@ -24,15 +29,14 @@ function DotinInterfaceGuide({config, addBase, addComponents, addUtilities}) {
     const baseConfig = {}
 
     baseConfig[":root"] = LightTheme
-    baseConfig["html.dark"] = DarkTheme
+    baseConfig["html[data-theme=\"dark\"]"] = DarkTheme
 
     addBase({...baseConfig, ...base});
     addComponents(components);
     addUtilities(utilities);
 }
 
-
-module.exports = require("tailwindcss/plugin")(DotinInterfaceGuide, {
+module.exports = require("tailwindcss/plugin")(PersianUI, {
     theme: {
         extend: {
             colors: {

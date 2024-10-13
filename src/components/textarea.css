@@ -1,0 +1,65 @@
+.textarea {
+    @apply font-normal text-[0.875rem] leading-[20px]; /* :::: label2 :::: */
+    @apply w-full min-h-12 h-fit resize-none p-3 rounded-lg text-primary;
+    outline: none;
+    transition: all ease-in-out 0.4s;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: variants ::::
+ */
+
+.textarea {
+    background-color: rgb(var(--bg-primary));
+    border: 1.5px solid #EDEDED;
+}
+
+.textarea.textarea-secondary {
+    background-color: rgb(var(--bg-secondary));
+    border: 1.5px solid #E6E6E6;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: firefox ::::
+ */
+
+.textarea:focus-visible,
+.textarea:focus-within {
+    outline: none !important;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: placeholder & focus ::::
+ */
+
+.textarea::placeholder {
+    color: rgb(var(--hint));
+}
+
+.textarea:focus {
+    border-color: rgb(var(--brand));
+    box-shadow: 0 0 0 4px rgba(var(--brand), 0.24), 0 0 0 4px rgb(var(--bg-primary));
+}
+
+.textarea:disabled {
+    color: rgb(var(--disabled));
+    cursor: not-allowed;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: error ::::
+ */
+
+.textarea--error {
+    background-color: rgb(var(--danger-light)) !important;
+    border-color: rgb(var(--danger)) !important;
+}
+
+.textarea--error:focus {
+    border-color: rgb(var(--danger)) !important;
+    box-shadow: 0 0 0 4px rgba(var(--danger), 0.24), 0 0 0 4px rgb(var(--bg-primary)) !important;
+}

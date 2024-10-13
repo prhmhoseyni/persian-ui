@@ -9,15 +9,23 @@ const tailwindConfig = {
         extend: {},
     },
     plugins: [require("./main")],
-    dig: {
+    "persian-ui": {
         themes: {
             light: {
                 "brand": "#24af85",
+                "brand--hover": "#209e78",
+                "brand--active": "#1d8c6a",
                 "brand-light": "#e9f7f3",
+                "brand-light--hover": "#def3ed",
+                "brand-light--active": "#bbe6d9",
             },
             dark: {
-                "brand": "#11503d",
-                "brand-light": "#022c20",
+                "brand": "#24af85",
+                "brand--hover": "#209e78",
+                "brand--active": "#1d8c6a",
+                "brand-light": "#e9f7f3",
+                "brand-light--hover": "#def3ed",
+                "brand-light--active": "#bbe6d9",
             }
         }
     }
