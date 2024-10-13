@@ -1,0 +1,65 @@
+.input {
+    @apply font-normal text-[0.875rem] leading-[20px]; /* :::: label2 :::: */
+    @apply w-full min-h-12 px-3 rounded-lg text-primary;
+    outline: none;
+    transition: all ease-in-out 0.4s;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: variants ::::
+ */
+
+.input {
+    background-color: rgb(var(--bg-primary));
+    border: 1.5px solid #EDEDED;
+}
+
+.input.input-secondary {
+    background-color: rgb(var(--bg-secondary));
+    border: 1.5px solid #E6E6E6;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: firefox ::::
+ */
+
+.input:focus-visible,
+.input:focus-within {
+    outline: none !important;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: placeholder & focus ::::
+ */
+
+.input::placeholder {
+    color: rgb(var(--hint));
+}
+
+.input:focus {
+    border-color: rgb(var(--brand));
+    box-shadow: 0 0 0 4px rgba(var(--brand), 0.24), 0 0 0 4px rgb(var(--bg-primary));
+}
+
+.input:disabled {
+    color: rgb(var(--disabled));
+    cursor: not-allowed;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: error ::::
+ */
+
+.input--error {
+    background-color: rgb(var(--danger-light)) !important;
+    border-color: rgb(var(--danger)) !important;
+}
+
+.input--error:focus {
+    border-color: rgb(var(--danger)) !important;
+    box-shadow: 0 0 0 4px rgba(var(--danger), 0.24), 0 0 0 4px rgb(var(--bg-primary)) !important;
+}

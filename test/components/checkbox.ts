@@ -13,17 +13,14 @@ interface Props {
 }
 
 export default function Checkbox(props: Props) {
-    if (props.indeterminate) {
-        if (props.disabled) {
-            return html`<input type="checkbox" name="checkbox" class="checkbox" disabled data-indeterminate="true" />`
-        }
-
-        return html`<input type="checkbox" name="checkbox" class="checkbox" data-indeterminate="true" />`
-    }
-
-    if (props.disabled) {
-        return html`<input type="checkbox" name="checkbox" class="checkbox" disabled />`
-    }
-
-    return html`<input type="checkbox" name="checkbox" class="checkbox" />`
+    return html`
+        <div dir="rtl" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+            <input type="checkbox" name="checkbox" class="checkbox"/>
+            <input type="checkbox" name="checkbox" class="checkbox" checked/>
+            <input type="checkbox" name="checkbox-disabled" class="checkbox" disabled/>
+            <input type="checkbox" name="checkbox-disabled" class="checkbox" checked disabled/>
+            <input type="checkbox" name="checkbox-disabled" class="checkbox" data-indeterminate="true" />
+            <input type="checkbox" name="checkbox-disabled" class="checkbox" checked disabled data-indeterminate="true"/>
+        </div>
+    `
 };

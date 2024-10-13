@@ -223,12 +223,6 @@
     }
 }
 
-/*@define-mixin h1 { .text-h1 {} }*/
-/*@define-mixin h2 { .text-h2 {} }*/
-/*@define-mixin h3 { .text-h3 {} }*/
-/*@define-mixin h4 { .text-h4 {} }*/
-/*@define-mixin h5 { .text-h5 {} }*/
-
 /**
  * ---------------------------------------------------------------------------------------------------------------------
  * :::: title ::::
@@ -269,11 +263,6 @@
 
     line-height: 18px
 }
-
-/*@define-mixin title1 { .text-title1 {} }*/
-/*@define-mixin title2 { .text-title2 {} }*/
-/*@define-mixin title3 { .text-title3 {} }*/
-/*@define-mixin title4 { .text-title4 {} }*/
 
 /**
  * ---------------------------------------------------------------------------------------------------------------------
@@ -316,11 +305,6 @@
     line-height: 24px
 }
 
-/*@define-mixin body1 { .text-body1 {} }*/
-/*@define-mixin body2 { .text-body2 {} }*/
-/*@define-mixin body3 { .text-body3 {} }*/
-/*@define-mixin body4 { .text-body4 {} }*/
-
 /**
  * ---------------------------------------------------------------------------------------------------------------------
  * :::: label ::::
@@ -362,11 +346,6 @@
     line-height: 16px
 }
 
-/*@define-mixin label1 { .text-label1 {} }*/
-/*@define-mixin label2 { .text-label2 {} }*/
-/*@define-mixin label3 { .text-label3 {} }*/
-/*@define-mixin label4 { .text-label4 {} }*/
-
 /**
  * ---------------------------------------------------------------------------------------------------------------------
  * :::: caption ::::
@@ -389,6 +368,3 @@
 
     line-height: 19px
 }
-
-/*@define-mixin caption1 { .text-caption1 {} }*/
-/*@define-mixin caption2 { .text-caption2 {} }*/
