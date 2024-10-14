@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prhmhoseyni/perisan-ui.git"
+    "url": "git+https://github.com/prhmhoseyni/persian-ui.git"
   },
   "author": "Parham Hoseyni",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/prhmhoseyni/perisan-ui/issues"
+    "url": "https://github.com/prhmhoseyni/persian-ui/issues"
   },
-  "homepage": "https://github.com/prhmhoseyni/perisan-ui#readme",
+  "homepage": "https://github.com/prhmhoseyni/persian-ui#readme",
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
     "@storybook/addon-essentials": "^8.2.7",
