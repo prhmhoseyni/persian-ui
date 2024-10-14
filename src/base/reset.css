@@ -6,3 +6,7 @@ html {
     @apply scroll-smooth;
 }
 
+body {
+    @apply bg-primary text-primary;
+}
+
