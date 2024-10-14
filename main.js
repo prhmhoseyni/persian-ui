@@ -31,8 +31,6 @@ function PersianUI({config, addBase, addComponents, addUtilities}) {
     baseConfig[":root"] = LightTheme
     baseConfig["html[data-theme=\"dark\"]"] = DarkTheme
 
-    console.log(baseConfig)
-
     addBase({...baseConfig, ...base});
     addComponents(components);
     addUtilities(utilities);
