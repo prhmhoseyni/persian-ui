@@ -6,10 +6,10 @@ pnpm-lock.yaml
 .yarn
 
 # production
-/build
-/test/base/*.css
-/test/components/*.css
-/test/utilities/*.css
+src/modules/*/*.css
+src/modules/*/*.css.map
+dist/*.css
+dist/*.css.map
 
 # editor directories and files
 .vscode/*

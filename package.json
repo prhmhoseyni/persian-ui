@@ -1,14 +1,16 @@
 {
   "name": "persian-ui",
-  "version": "1.1.3",
-  "description": "Persian UI",
+  "description": "A component library for Tailwind CSS",
+  "version": "1.2.0",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "postcss src/*/*.css --base src --dir test --watch",
-    "storybook": "postcss ./src/main.css -o ./.storybook/tailwind.css && storybook dev -p 6006",
-    "build:storybook": "storybook build",
-    "build": "node build.js --base && node build.js --components && node build.js --utilities"
+    "build": "npx prejss-cli dist/*.css --format commonjs",
+    "base:sass": "sass src/modules/base/index.scss src/modules/base/index.css --watch",
+    "base:pcss": "postcss src/modules/base/index.css -o dist/base.css --watch",
+    "components:sass": "sass src/modules/components/index.scss src/modules/components/index.css --watch",
+    "components:pcss": "postcss src/modules/components/index.css -o dist/components.css --watch",
+    "utils:sass": "sass src/modules/utilities/index.scss src/modules/utilities/index.css --watch",
+    "utils:pcss": "postcss src/modules/utilities/index.css -o dist/utilities.css --watch"
   },
   "repository": {
     "type": "git",
@@ -20,33 +22,21 @@
     "url": "https://github.com/prhmhoseyni/persian-ui/issues"
   },
   "homepage": "https://github.com/prhmhoseyni/persian-ui#readme",
+  "keywords": [],
+  "dependencies": {
+    "color": "^4.2.3"
+  },
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.6.1",
-    "@storybook/addon-essentials": "^8.2.7",
-    "@storybook/addon-links": "^8.2.7",
-    "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
-    "@storybook/blocks": "^8.2.7",
-    "@storybook/test": "^8.2.7",
-    "@storybook/web-components": "^8.2.7",
-    "@storybook/web-components-webpack5": "^8.2.7",
-    "autoprefixer": "^10.4.19",
-    "fs-extra": "^11.2.0",
-    "lit": "^3.2.0",
-    "postcss": "^8.4.41",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
     "postcss-cli": "^11.0.0",
-    "postcss-each": "^1.1.0",
-    "postcss-mixins": "^10.0.1",
-    "postcss-nested": "^6.2.0",
-    "storybook": "^8.2.7",
-    "tailwindcss": "^3.4.7"
+    "sass": "^1.80.4",
+    "tailwindcss": "^3.4.14"
   },
   "files": [
     "main.js",
     "config/",
     "dist/",
     "README.md"
-  ],
-  "dependencies": {
-    "color": "^4.2.3"
-  }
+  ]
 }

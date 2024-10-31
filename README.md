@@ -49,26 +49,17 @@ You can customize your application theme:
 module.exports = {
     plugins: [require("persian-ui")],
     "persian-ui": {
+        darkMode: "class", // "class" or "auto"
         themes: {
             light: {
                 "brand": "#1685C5",
-                "brand--hover": "#0255A6",
-                "brand--active": "#02417E",
-                "brand-light": "#E9EEF5",
-                "brand-light--hover": "#DEE5F0",
-                "brand-light--active": "#DEE5F0",
             },
             dark: {
                 "brand": "#092C44",
-                "brand--hover": "#0C3B5A",
-                "brand--active": "#0C3B5A",
-                "brand-light": "#1685C5",
-                "brand-light--hover": "#147CB8",
-                "brand-light--active": "#147CB8",
-            }
-        }
-    }
-}
+            },
+        },
+    },
+};
 ```
 
 
@@ -76,7 +67,7 @@ module.exports = {
 Start building your Persian interfaces using our utility classes and components:
 
 ```html
-<h1 class="text-h1 underline">
+<h1 class="text-heading1 underline">
     سلام، این یک متن نمونه است!
 </h1>
 

@@ -1,0 +1,27 @@
+@mixin text($variant) {
+  color: color-mix(in srgb, rgb(var(--persian-ui-#{$variant})), var(--persian-ui-color-mix-text));
+}
+
+@mixin bg-primary($variant) {
+  background-color: rgb(var(--persian-ui-#{$variant}));
+}
+
+@mixin bg-primary-hover($variant) {
+  background-color: color-mix(in srgb, rgb(var(--persian-ui-#{$variant})), var(--persian-ui-color-mix-hover));
+}
+
+@mixin bg-primary-active($variant) {
+  background-color: color-mix(in srgb, rgb(var(--persian-ui-#{$variant})), var(--persian-ui-color-mix-active));
+}
+
+@mixin bg-light($variant) {
+  background-color: color-mix(in srgb, rgb(var(--persian-ui-#{$variant})), var(--persian-ui-color-mix-light));
+}
+
+@mixin bg-light-hover($variant) {
+  background-color: color-mix(in srgb, rgb(var(--persian-ui-#{$variant})), var(--persian-ui-color-mix-light-hover));
+}
+
+@mixin bg-light-active($variant) {
+  background-color: color-mix(in srgb, rgb(var(--persian-ui-#{$variant})), var(--persian-ui-color-mix-light-active));
+}

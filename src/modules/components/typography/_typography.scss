@@ -1,0 +1,114 @@
+@import "../../../lib/mixin.typography.scss";
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: heading ::::
+ */
+
+.text-heading1 {
+    @include heading1;
+}
+
+.text-heading2 {
+    @include heading2;
+}
+
+.text-heading3 {
+    @include heading3;
+}
+
+.text-heading4 {
+    @include heading4;
+}
+
+.text-heading5 {
+    @include heading5;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: subtitle ::::
+ */
+
+.text-subtitle1 {
+    @include subtitle1;
+}
+
+.text-subtitle2 {
+    @include subtitle2;
+}
+
+.text-subtitle3 {
+    @include subtitle3;
+}
+
+.text-subtitle4 {
+    @include subtitle4;
+}
+
+.text-subtitle5 {
+    @include subtitle5;
+}
+
+.text-subtitle6 {
+    @include subtitle6;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: paragraph ::::
+ */
+
+.text-paragraph1 {
+    @include paragraph1;
+}
+
+.text-paragraph2 {
+    @include paragraph2;
+}
+
+.text-paragraph3 {
+    @include paragraph3;
+}
+
+.text-paragraph4 {
+    @include paragraph4;
+}
+
+.text-paragraph5 {
+    @include paragraph5;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: label ::::
+ */
+
+.text-label1 {
+    @include label1;
+}
+
+.text-label2 {
+    @include label2;
+}
+
+.text-label3 {
+    @include label3;
+}
+
+.text-label4 {
+    @include label4;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: caption ::::
+ */
+
+.text-caption1 {
+    @include caption1;
+}
+
+.text-caption2 {
+    @include caption2;
+}
