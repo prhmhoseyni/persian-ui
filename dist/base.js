@@ -1,1 +1,1 @@
-module.exports = {};
+module.exports = {"*":{"boxSizing":"border-box"},"html":{"scrollBehavior":"smooth"},"body":{"backgroundColor":"rgb(var(--persian-ui-bg-body))","color":"rgb(var(--persian-ui-text-primary))"}};

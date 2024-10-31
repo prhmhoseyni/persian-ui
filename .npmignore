@@ -1,5 +1,7 @@
 # Ignore source directory
 src/
+dist/*.css
+dist/*.css.map
 
 # Ignore test directory
 test/

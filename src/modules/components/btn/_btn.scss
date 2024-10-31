@@ -87,8 +87,8 @@ $variants: "brand", "info", "success", "warning", "danger", "grey";
 
     .btn.btn-#{$variant}.btn-outlined {
         @include text(#{$variant});
-        @apply bg-transparent border;
-        border-color: rgb(var(--persian-ui-#{$variant}));
+        @apply bg-transparent;
+        border: 1px solid rgb(var(--persian-ui-#{$variant}));
 
         &:hover {
             @include bg-light-hover(#{$variant});
@@ -110,6 +110,7 @@ $variants: "brand", "info", "success", "warning", "danger", "grey";
 
         &:active {
             @apply bg-transparent;
+            box-shadow: none;
         }
     }
 }
