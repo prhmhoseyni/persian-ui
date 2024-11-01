@@ -1,0 +1,123 @@
+@import "../../lib/mixin.colors.scss";
+@import "../../lib/mixin.typography.scss";
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: btn ::::
+ */
+
+.icon-btn {
+    @apply inline-flex items-center justify-between gap-1 rounded-lg cursor-pointer outline-none;
+    transition: all ease-in-out 0.3s;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: sizes ::::
+ */
+
+.icon-btn:not(.icon-btn-xs, .icon-btn-sm, .icon-btn-lg, .icon-btn-xl) {
+    @apply min-h-10 h-10 min-w-10 w-10;
+}
+
+.icon-btn.icon-btn-xs {
+    @apply min-h-8 h-8 min-w-8 w-8;
+}
+
+.icon-btn.icon-btn-sm {
+    @apply min-h-9 h-9 min-w-9 w-9;
+}
+
+.icon-btn.icon-btn-lg {
+    @apply min-h-11 h-11 min-w-11 w-11;
+}
+
+.icon-btn.icon-btn-xl {
+    @apply min-h-12 h-12 min-w-12 w-12;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: rounded full ::::
+ */
+
+.icon-btn.icon-btn-rounded-full {
+    @apply rounded-full;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: variants ::::
+ */
+
+$variants: "brand", "info", "success", "warning", "danger", "grey";
+
+@each $variant in $variants {
+    .icon-btn.icon-btn-#{$variant} {
+        @include bg-primary(#{$variant});
+        @apply text-inverse;
+
+        &:hover {
+            @include bg-primary-hover(#{$variant});
+        }
+
+        &:active {
+            @include bg-primary-active(#{$variant});
+            @include box-shadow(#{$variant});
+        }
+    }
+
+    .icon-btn.icon-btn-#{$variant}.icon-btn-tinted {
+        @include text(#{$variant});
+        @include bg-light(#{$variant});
+
+        &:hover {
+            @include bg-light-hover(#{$variant});
+        }
+
+        &:active {
+            @include bg-light-active(#{$variant});
+            @include box-shadow(#{$variant});
+        }
+    }
+
+    .icon-btn.icon-btn-#{$variant}.icon-btn-outlined {
+        @include text(#{$variant});
+        @apply bg-transparent;
+        border: 1px solid rgb(var(--persian-ui-#{$variant}));
+
+        &:hover {
+            @include bg-light-hover(#{$variant});
+        }
+
+        &:active {
+            @include bg-light-active(#{$variant});
+            @include box-shadow(#{$variant});
+        }
+    }
+
+    .icon-btn.icon-btn-#{$variant}.icon-btn-text {
+        @include text(#{$variant});
+        @apply bg-transparent;
+
+        &:hover {
+            @apply bg-transparent;
+        }
+
+        &:active {
+            @apply bg-transparent;
+            box-shadow: none;
+        }
+    }
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: disabled ::::
+ */
+
+.icon-btn:disabled,
+.icon-btn:hover:disabled,
+.icon-btn:active:disabled {
+    @apply cursor-not-allowed opacity-40;
+}

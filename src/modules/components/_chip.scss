@@ -75,10 +75,10 @@ $variants: "brand", "info", "success", "warning", "danger", "grey";
     }
     
     & > .adornment.adornment-start {
-        @apply left-2;
+        @apply left-1;
     }
     
     & > .adornment.adornment-end {
-        @apply right-2;
+        @apply right-1;
     }
 }

@@ -1,7 +1,7 @@
 {
   "name": "persian-ui",
   "description": "A component library for Tailwind CSS",
-  "version": "1.2.5",
+  "version": "1.2.7",
   "main": "main.js",
   "scripts": {
     "build:sass": "sass src/modules/base/index.scss src/modules/base/index.css --style compressed",
@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/prhmhoseyni/persian-ui/issues"
   },
-  "homepage": "https://github.com/prhmhoseyni/persian-ui#readme",
+  "homepage": "https://67255a436fd9a57388a69766-eqmmestlkg.chromatic.com",
   "keywords": [],
   "dependencies": {
     "color": "^4.2.3"
