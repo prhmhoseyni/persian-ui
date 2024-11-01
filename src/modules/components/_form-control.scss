@@ -1,0 +1,255 @@
+@import "../../lib/mixin.typography.scss";
+
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: form control ::::
+ */
+
+.form-control {
+    @include label2;
+    @apply w-full rounded-lg text-primary outline-none min-h-12 px-3;
+    transition: all ease-in-out 0.3s;
+}
+
+select.form-control {
+    /* :::: customize arrow left :::: */
+    -moz-appearance: none; /* :::: Firefox :::: */
+    -webkit-appearance: none; /* :::: Safari and Chrome :::: */
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='18' viewBox='0 -960 960 960' width='18'><path d='M480-345 240-585l43-43 197 198 197-197 43 43-240 239Z'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 0.5rem;
+    background-position-y: 0.9rem;
+    padding-left: 2.5rem;
+    padding-block: 0.64rem;
+}
+
+textarea.form-control {
+    @apply min-h-12 h-fit resize-none p-3;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: variants ::::
+ */
+
+.form-control {
+    @apply bg-paper;
+    border: 1.5px solid #EDEDED;
+}
+
+.form-control.form-control-secondary {
+    @apply bg-body;
+    border: 1.5px solid #E6E6E6;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: firefox ::::
+ */
+
+.form-control:focus-visible,
+.form-control:focus-within {
+    outline: none !important;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: placeholder & focus ::::
+ */
+
+.form-control::placeholder {
+    @apply text-hint;
+}
+
+.form-control:focus {
+    border-color: rgb(var(--persian-ui-brand));
+    box-shadow: 0 0 0 4px rgba(var(--persian-ui-brand), 0.24), 0 0 0 4px rgb(var(--persian-ui-bg-body));
+}
+
+.form-control:disabled {
+    @apply text-disabled cursor-not-allowed;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: has error ::::
+ */
+
+.form-control--has-error {
+    @apply bg-danger-light;
+    border-color: rgb(var(--persian-ui-danger)) !important;
+}
+
+.form-control--has-error:focus {
+    border-color: rgb(var(--persian-ui-danger)) !important;
+    box-shadow: 0 0 0 4px rgba(var(--persian-ui-danger), 0.24), 0 0 0 4px rgb(var(--persian-ui-bg-body)) !important;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: checkbox ::::
+ */
+
+input[type="checkbox"].form-control {
+    -webkit-appearance: none;
+    padding: 0;
+    appearance: none;
+    min-width: 1.25rem;
+    width: 1.25rem;
+    min-height: 1.25rem;
+    height: 1.25rem;
+    background-color: rgb(var(--persian-ui-bg-body));
+    border: 1px solid #EEF0F2; /* TODO: read from theme */
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    transition: 240ms transform linear;
+
+    /**
+     * :::: checked ::::
+     */
+
+    &:checked {
+        border-color: rgb(var(--persian-ui-brand));
+        background-color: rgb(var(--persian-ui-brand));
+
+        /**
+         * :::: disabled checked ::::
+         */
+
+        &:disabled {
+            @apply cursor-not-allowed opacity-40;
+        }
+    }
+
+    /**
+     * :::: disabled ::::
+     */
+
+    &:disabled {
+        @apply cursor-not-allowed opacity-40;
+    }
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: before ::::
+ */
+
+input[type="checkbox"].form-control::before {
+    content: "";
+    width: 0.625rem;
+    height: 0.625rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 120ms transform linear;
+}
+
+/**
+ * :::: default ::::
+ */
+
+input[type="checkbox"].form-control::before {
+    background-image: url('data:image/svg+xml,<svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.00002 4.09142L3.75278 6.8442L9.597 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+/**
+ * :::: indeterminate ::::
+ */
+
+input[type="checkbox"][data-indeterminate="true"].form-control::before {
+    background-image: url('data:image/svg+xml,<svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1H8.5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+/**
+ * :::: checked ::::
+ */
+
+input[type="checkbox"].form-control:checked::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: radio ::::
+ */
+
+input[type="radio"].form-control {
+    -webkit-appearance: none;
+    padding: 0;
+    appearance: none;
+    min-width: 1.25rem;
+    width: 1.25rem;
+    min-height: 1.25rem;
+    height: 1.25rem;
+    background-color: rgb(var(--persian-ui-bg-body));
+    border: 1px solid #EEF0F2; /* TODO: read from theme */
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    transition: 240ms transform linear;
+
+    /**
+     * :::: checked ::::
+     */
+
+    &:checked {
+        border-color: rgb(var(--persian-ui-brand));
+        background-color: rgb(var(--persian-ui-brand));
+
+        /**
+         * :::: disabled checked ::::
+         */
+
+        &:disabled {
+            @apply cursor-not-allowed opacity-40;
+        }
+    }
+
+    /**
+     * :::: disabled ::::
+     */
+
+    &:disabled {
+        @apply cursor-not-allowed opacity-40;
+    }
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: before ::::
+ */
+
+input[type="radio"].form-control::before {
+    content: "";
+    width: 0.47rem;
+    height: 0.47rem;
+    position: absolute;
+    background-color: rgb(var(--persian-ui-bg-body));
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 120ms transform linear;
+}
+
+
+/**
+ * :::: checked ::::
+ */
+
+input[type="radio"].form-control:checked::before {
+    transform: translate(-50%, -50%) scale(1);
+}

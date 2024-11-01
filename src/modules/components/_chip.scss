@@ -1,0 +1,84 @@
+@import "../../lib/mixin.colors.scss";
+@import "../../lib/mixin.typography.scss";
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: chip ::::
+ */
+
+.chip {
+    @include subtitle5;
+    @apply h-8 px-3 inline-flex items-center justify-between gap-1 rounded-full outline-none cursor-pointer;
+    transition: all ease-in-out 0.3s;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: variants ::::
+ */
+
+$variants: "brand", "info", "success", "warning", "danger", "grey";
+
+@each $variant in $variants {
+    .chip.chip-#{$variant} {
+        @include text(#{$variant});
+        @include bg-light(#{$variant});
+
+        &:hover {
+            @include bg-light-hover(#{$variant});
+        }
+
+        &:active {
+            @include bg-light-active(#{$variant});
+            @include box-shadow(#{$variant});
+        }
+    }
+
+    .chip.chip-#{$variant}.chip-outlined {
+        @include text(#{$variant});
+        @apply bg-transparent;
+        border: 1px solid rgb(var(--persian-ui-#{$variant}));
+
+        &:hover {
+            @include bg-light-hover(#{$variant});
+        }
+
+        &:active {
+            @include bg-light-active(#{$variant});
+            @include box-shadow(#{$variant});
+        }
+    }
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: disabled ::::
+ */
+
+.chip[aria-disabled="true"],
+.chip[aria-disabled="true"]:hover,
+.chip[aria-disabled="true"]:active,
+.chip:disabled,
+.chip:hover:disabled,
+.chip:active:disabled {
+    @apply cursor-not-allowed opacity-40;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: adornment ::::
+ */
+
+.chip {
+    & > .adornment {
+        @apply relative;
+    }
+    
+    & > .adornment.adornment-start {
+        @apply left-2;
+    }
+    
+    & > .adornment.adornment-end {
+        @apply right-2;
+    }
+}

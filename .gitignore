@@ -6,6 +6,8 @@ pnpm-lock.yaml
 .yarn
 
 # production
+src/index.html
+src/output.css
 src/modules/*/*.css
 src/modules/*/*.css.map
 dist/*.css

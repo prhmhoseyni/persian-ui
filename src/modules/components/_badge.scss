@@ -1,0 +1,40 @@
+@import "../../lib/mixin.colors.scss";
+@import "../../lib/mixin.typography.scss";
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: badge ::::
+ */
+
+.badge {
+    @include label4;
+    @apply inline-flex justify-between items-center gap-1 px-2 min-h-6 rounded;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: rounded full ::::
+ */
+
+.badge.badge-rounded-full {
+    @apply rounded-full;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: variants ::::
+ */
+ 
+$variants: "brand", "info", "success", "warning", "danger", "grey";
+
+@each $variant in $variants {
+    .badge.badge-#{$variant} {
+        @include bg-primary(#{$variant});
+        @apply text-inverse;
+    }
+
+    .badge.badge-#{$variant}.badge-tinted {
+        @include text(#{$variant});
+        @include bg-light(#{$variant});
+    }
+}

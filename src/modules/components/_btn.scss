@@ -1,5 +1,5 @@
-@import "../../../lib/mixin.colors.scss";
-@import "../../../lib/mixin.typography.scss";
+@import "../../lib/mixin.colors.scss";
+@import "../../lib/mixin.typography.scss";
 
 /**
  * ---------------------------------------------------------------------------------------------------------------------
@@ -7,8 +7,8 @@
  */
 
 .btn {
-    all: unset;
-    @apply inline-flex items-center justify-between gap-1 rounded-lg cursor-pointer outline-none transition-all ease-in-out;
+    @apply inline-flex items-center justify-between gap-1 rounded-lg cursor-pointer outline-none;
+    transition: all ease-in-out 0.3s;
 }
 
 /**
@@ -43,6 +43,35 @@
 
 /**
  * ---------------------------------------------------------------------------------------------------------------------
+ * :::: icon btn ::::
+ */
+
+.btn.btn-square {
+    @apply inline-flex items-center justify-center p-0;
+}
+
+.btn.btn-square:not(.btn-square.btn-xs, .btn-square.btn-sm, .btn-square.btn-lg, .btn-square.btn-xl) {
+    @apply min-h-10 h-10 min-w-10 w-10;
+}
+
+.btn.btn-square.btn-xs {
+    @apply min-h-8 h-8 min-w-8 w-8;
+}
+
+.btn.btn-square.btn-sm {
+    @apply min-h-9 h-9 min-w-9 w-9;
+}
+
+.btn.btn-square.btn-lg {
+    @apply min-h-11 h-11 min-w-11 w-11;
+}
+
+.btn.btn-square.btn-xl {
+    @apply min-h-12 h-12 min-w-12 w-12;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
  * :::: rounded full ::::
  */
 
@@ -54,6 +83,7 @@
  * ---------------------------------------------------------------------------------------------------------------------
  * :::: variants ::::
  */
+
 $variants: "brand", "info", "success", "warning", "danger", "grey";
 
 @each $variant in $variants {
@@ -67,7 +97,7 @@ $variants: "brand", "info", "success", "warning", "danger", "grey";
 
         &:active {
             @include bg-primary-active(#{$variant});
-            box-shadow: 0px 0px 0px 1px rgb(var(--persian-ui-bg-paper)), 0px 0px 0px 4px rgb(var(--persian-ui-#{$variant}), var(--persian-ui-border-alpha));
+            @include box-shadow(#{$variant});
         }
     }
 
@@ -81,7 +111,7 @@ $variants: "brand", "info", "success", "warning", "danger", "grey";
 
         &:active {
             @include bg-light-active(#{$variant});
-            box-shadow: 0px 0px 0px 1px rgb(var(--persian-ui-bg-paper)), 0px 0px 0px 4px rgb(var(--persian-ui-#{$variant}), var(--persian-ui-border-alpha));
+            @include box-shadow(#{$variant});
         }
     }
 
@@ -96,7 +126,7 @@ $variants: "brand", "info", "success", "warning", "danger", "grey";
 
         &:active {
             @include bg-light-active(#{$variant});
-            box-shadow: 0px 0px 0px 1px rgb(var(--persian-ui-bg-paper)), 0px 0px 0px 4px rgb(var(--persian-ui-#{$variant}), var(--persian-ui-border-alpha));
+            @include box-shadow(#{$variant});
         }
     }
 
@@ -124,4 +154,23 @@ $variants: "brand", "info", "success", "warning", "danger", "grey";
 .btn:hover:disabled,
 .btn:active:disabled {
     @apply cursor-not-allowed opacity-40;
+}
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
+ * :::: adornment ::::
+ */
+
+.btn {
+    & > .adornment {
+        @apply relative;
+    }
+    
+    & > .adornment.adornment-start {
+        @apply left-1;
+    }
+    
+    & > .adornment.adornment-end {
+        @apply right-1;
+    }
 }

@@ -25,3 +25,9 @@
 @mixin bg-light-active($variant) {
   background-color: color-mix(in srgb, rgb(var(--persian-ui-#{$variant})), var(--persian-ui-color-mix-light-active));
 }
+
+@mixin box-shadow($variant) {
+  box-shadow: 
+    0px 0px 0px 1px rgb(var(--persian-ui-bg-paper)),
+    0px 0px 0px 4px rgb(var(--persian-ui-#{$variant}), var(--persian-ui-border-alpha));
+}
