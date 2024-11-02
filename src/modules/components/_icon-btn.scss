@@ -7,7 +7,7 @@
  */
 
 .icon-btn {
-    @apply inline-flex items-center justify-between gap-1 rounded-lg cursor-pointer outline-none;
+    @apply inline-flex items-center justify-center gap-1 rounded-lg cursor-pointer outline-none;
     transition: all ease-in-out 0.3s;
 }
 

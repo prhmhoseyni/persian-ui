@@ -1,7 +1,7 @@
 {
   "name": "persian-ui",
   "description": "A component library for Tailwind CSS",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "main": "main.js",
   "scripts": {
     "build:sass": "sass src/modules/base/index.scss src/modules/base/index.css --style compressed",
