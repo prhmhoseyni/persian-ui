@@ -8,7 +8,7 @@
 
 .badge {
     @include label4;
-    @apply inline-flex justify-between items-center gap-1 px-2 min-h-6 rounded;
+    @apply flex justify-center items-center gap-1 px-2 min-h-6 rounded;
 }
 
 /**
