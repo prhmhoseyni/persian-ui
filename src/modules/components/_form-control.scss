@@ -10,6 +10,7 @@
     @include label2;
     @apply w-full rounded-lg text-primary outline-none min-h-12 px-3;
     transition: all ease-in-out 0.3s;
+    outline: none;
 }
 
 select.form-control {
