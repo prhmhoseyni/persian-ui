@@ -1,4 +1,4 @@
-@import "../../lib/mixin.typography.scss";
+@use "../../lib/mixin.typography.scss" as typography;
 
 /**
  * ---------------------------------------------------------------------------------------------------------------------
@@ -6,23 +6,23 @@
  */
 
 .text-heading1 {
-    @include heading1;
+    @include typography.heading1;
 }
 
 .text-heading2 {
-    @include heading2;
+    @include typography.heading2;
 }
 
 .text-heading3 {
-    @include heading3;
+    @include typography.heading3;
 }
 
 .text-heading4 {
-    @include heading4;
+    @include typography.heading4;
 }
 
 .text-heading5 {
-    @include heading5;
+    @include typography.heading5;
 }
 
 /**
@@ -31,27 +31,27 @@
  */
 
 .text-subtitle1 {
-    @include subtitle1;
+    @include typography.subtitle1;
 }
 
 .text-subtitle2 {
-    @include subtitle2;
+    @include typography.subtitle2;
 }
 
 .text-subtitle3 {
-    @include subtitle3;
+    @include typography.subtitle3;
 }
 
 .text-subtitle4 {
-    @include subtitle4;
+    @include typography.subtitle4;
 }
 
 .text-subtitle5 {
-    @include subtitle5;
+    @include typography.subtitle5;
 }
 
 .text-subtitle6 {
-    @include subtitle6;
+    @include typography.subtitle6;
 }
 
 /**
@@ -60,23 +60,23 @@
  */
 
 .text-paragraph1 {
-    @include paragraph1;
+    @include typography.paragraph1;
 }
 
 .text-paragraph2 {
-    @include paragraph2;
+    @include typography.paragraph2;
 }
 
 .text-paragraph3 {
-    @include paragraph3;
+    @include typography.paragraph3;
 }
 
 .text-paragraph4 {
-    @include paragraph4;
+    @include typography.paragraph4;
 }
 
 .text-paragraph5 {
-    @include paragraph5;
+    @include typography.paragraph5;
 }
 
 /**
@@ -85,19 +85,19 @@
  */
 
 .text-label1 {
-    @include label1;
+    @include typography.label1;
 }
 
 .text-label2 {
-    @include label2;
+    @include typography.label2;
 }
 
 .text-label3 {
-    @include label3;
+    @include typography.label3;
 }
 
 .text-label4 {
-    @include label4;
+    @include typography.label4;
 }
 
 /**
@@ -106,9 +106,9 @@
  */
 
 .text-caption1 {
-    @include caption1;
+    @include typography.caption1;
 }
 
 .text-caption2 {
-    @include caption2;
+    @include typography.caption2;
 }

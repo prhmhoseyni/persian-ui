@@ -1,5 +1,5 @@
-@import "../../lib/mixin.colors.scss";
-@import "../../lib/mixin.typography.scss";
+@use "../../lib/mixin.colors.scss" as colors;
+@use "../../lib/mixin.typography.scss" as typography;
 
 /**
  * ---------------------------------------------------------------------------------------------------------------------
@@ -7,7 +7,7 @@
  */
 
 .badge {
-    @include label4;
+    @include typography.label4;
     @apply flex justify-center items-center gap-1 px-2 min-h-6 rounded;
 }
 
@@ -29,12 +29,12 @@ $variants: "brand", "info", "success", "warning", "danger", "grey";
 
 @each $variant in $variants {
     .badge.badge-#{$variant} {
-        @include bg-primary(#{$variant});
+        @include colors.bg-primary(#{$variant});
         @apply text-inverse;
     }
 
     .badge.badge-#{$variant}.badge-tinted {
-        @include text(#{$variant});
-        @include bg-light(#{$variant});
+        @include colors.text(#{$variant});
+        @include colors.bg-light(#{$variant});
     }
 }

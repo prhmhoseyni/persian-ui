@@ -1,5 +1,5 @@
-@import "../../lib/mixin.colors.scss";
-@import "../../lib/mixin.typography.scss";
+@use "../../lib/mixin.colors.scss" as colors;
+@use "../../lib/mixin.typography.scss" as typography;
 
 /**
  * ---------------------------------------------------------------------------------------------------------------------
@@ -7,7 +7,7 @@
  */
 
 .chip {
-    @include subtitle5;
+    @include typography.subtitle5;
     @apply h-8 px-3 inline-flex items-center justify-between gap-1 rounded-full outline-none cursor-pointer;
     transition: all ease-in-out 0.3s;
 }
@@ -21,31 +21,31 @@ $variants: "brand", "info", "success", "warning", "danger", "grey";
 
 @each $variant in $variants {
     .chip.chip-#{$variant} {
-        @include text(#{$variant});
-        @include bg-light(#{$variant});
+        @include colors.text(#{$variant});
+        @include colors.bg-light(#{$variant});
 
         &:hover {
-            @include bg-light-hover(#{$variant});
+            @include colors.bg-light-hover(#{$variant});
         }
 
         &:active {
-            @include bg-light-active(#{$variant});
-            @include box-shadow(#{$variant});
+            @include colors.bg-light-active(#{$variant});
+            @include colors.box-shadow(#{$variant});
         }
     }
 
     .chip.chip-#{$variant}.chip-outlined {
-        @include text(#{$variant});
+        @include colors.text(#{$variant});
         @apply bg-transparent;
         border: 1px solid rgb(var(--persian-ui-#{$variant}));
 
         &:hover {
-            @include bg-light-hover(#{$variant});
+            @include colors.bg-light-hover(#{$variant});
         }
 
         &:active {
-            @include bg-light-active(#{$variant});
-            @include box-shadow(#{$variant});
+            @include colors.bg-light-active(#{$variant});
+            @include colors.box-shadow(#{$variant});
         }
     }
 }

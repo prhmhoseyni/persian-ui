@@ -1,5 +1,5 @@
-@import "../../lib/mixin.colors.scss";
-@import "../../lib/mixin.typography.scss";
+@use "../../lib/mixin.colors.scss" as colors;
+@use "../../lib/mixin.typography.scss" as typography;
 
 /**
  * ---------------------------------------------------------------------------------------------------------------------
@@ -17,27 +17,27 @@
  */
 
 .btn:not(.btn-xs, .btn-sm, .btn-lg, .btn-xl) {
-    @include subtitle5;
+    @include typography.subtitle5;
     @apply h-10 px-3;
 }
 
 .btn.btn-xs {
-    @include subtitle5;
+    @include typography.subtitle5;
     @apply h-8 px-3;
 }
 
 .btn.btn-sm {
-    @include subtitle4;
+    @include typography.subtitle4;
     @apply h-9 px-3;
 }
 
 .btn.btn-lg {
-    @include subtitle4;
+    @include typography.subtitle4;
     @apply h-11 px-4;
 }
 
 .btn.btn-xl {
-    @include subtitle3;
+    @include typography.subtitle3;
     @apply h-12 px-4;
 }
 
@@ -88,50 +88,50 @@ $variants: "brand", "info", "success", "warning", "danger", "grey";
 
 @each $variant in $variants {
     .btn.btn-#{$variant} {
-        @include bg-primary(#{$variant});
+        @include colors.bg-primary(#{$variant});
         @apply text-inverse;
 
         &:hover {
-            @include bg-primary-hover(#{$variant});
+            @include colors.bg-primary-hover(#{$variant});
         }
 
         &:active {
-            @include bg-primary-active(#{$variant});
-            @include box-shadow(#{$variant});
+            @include colors.bg-primary-active(#{$variant});
+            @include colors.box-shadow(#{$variant});
         }
     }
 
     .btn.btn-#{$variant}.btn-tinted {
-        @include text(#{$variant});
-        @include bg-light(#{$variant});
+        @include colors.text(#{$variant});
+        @include colors.bg-light(#{$variant});
 
         &:hover {
-            @include bg-light-hover(#{$variant});
+            @include colors.bg-light-hover(#{$variant});
         }
 
         &:active {
-            @include bg-light-active(#{$variant});
-            @include box-shadow(#{$variant});
+            @include colors.bg-light-active(#{$variant});
+            @include colors.box-shadow(#{$variant});
         }
     }
 
     .btn.btn-#{$variant}.btn-outlined {
-        @include text(#{$variant});
+        @include colors.text(#{$variant});
         @apply bg-transparent;
         border: 1px solid rgb(var(--persian-ui-#{$variant}));
 
         &:hover {
-            @include bg-light-hover(#{$variant});
+            @include colors.bg-light-hover(#{$variant});
         }
 
         &:active {
-            @include bg-light-active(#{$variant});
-            @include box-shadow(#{$variant});
+            @include colors.bg-light-active(#{$variant});
+            @include colors.box-shadow(#{$variant});
         }
     }
 
     .btn.btn-#{$variant}.btn-text {
-        @include text(#{$variant});
+        @include colors.text(#{$variant});
         @apply bg-transparent;
 
         &:hover {

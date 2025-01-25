@@ -1,4 +1,4 @@
-@import "../../lib/mixin.typography.scss";
+@use "../../lib/mixin.typography.scss" as typography;
 
 
 /**
@@ -7,7 +7,7 @@
  */
 
 .form-control {
-    @include label2;
+    @include typography.label2;
     @apply w-full rounded-lg text-primary outline-none min-h-12 px-3;
     transition: all ease-in-out 0.3s;
     outline: none;
